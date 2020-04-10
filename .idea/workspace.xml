@@ -1,7 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0e66c5af-f6c1-4cf8-9b05-46217e833a18" name="Default Changelist" comment="" />
+    <list default="true" id="0e66c5af-f6c1-4cf8-9b05-46217e833a18" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/data_generator/configurations/physical_values.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_generator/data_models/initial_masses_calculations.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_generator/mathematical_calculations/IsothermalProfile.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_generator/mathematical_calculations/NFWProfile.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_generator/mathematical_calculations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_generator/mathematical_calculations/mass_calculation.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_generator/configurations/initial_galaxy_params.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_generator/configurations/initial_galaxy_params.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_generator/data_models/arrays_modifier.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_generator/data_models/arrays_modifier.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_generator/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_generator/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_generator/seed+3_seedn7_nonlog_alpha9-06_280_1full_wide.png" beforeDir="false" afterPath="$PROJECT_DIR$/data_generator/seed+3_seedn7_nonlog_alpha9-06_280_1full_wide.png" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -15,9 +27,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="ROOT_SYNC" value="DONT_SYNC" />
   </component>
   <component name="ProjectId" id="1Y7A2KkLod3W0ZFYmRm6buyCM3U" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -85,25 +99,33 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="421" y="96" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1582450918449" />
-    <state width="1281" height="215" key="GridCell.Tab.0.bottom" timestamp="1584797039247">
+    <state width="1281" height="137" key="GridCell.Tab.0.bottom" timestamp="1586535324482">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1281" height="215" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1584797039247" />
-    <state width="1281" height="215" key="GridCell.Tab.0.center" timestamp="1584797039247">
+    <state width="1281" height="137" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1586535324482" />
+    <state width="1281" height="137" key="GridCell.Tab.0.center" timestamp="1586535324481">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1281" height="215" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1584797039247" />
-    <state width="1281" height="215" key="GridCell.Tab.0.left" timestamp="1584797039247">
+    <state width="1281" height="137" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1586535324481" />
+    <state width="1281" height="137" key="GridCell.Tab.0.left" timestamp="1586535324481">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1281" height="215" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1584797039247" />
-    <state width="1281" height="215" key="GridCell.Tab.0.right" timestamp="1584797039247">
+    <state width="1281" height="137" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1586535324481" />
+    <state width="1281" height="137" key="GridCell.Tab.0.right" timestamp="1586535324481">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1281" height="215" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1584797039247" />
-    <state x="337" y="165" key="com.intellij.ide.util.TipDialog" timestamp="1584796348889">
+    <state width="1281" height="137" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1586535324481" />
+    <state x="337" y="165" key="com.intellij.ide.util.TipDialog" timestamp="1586325309778">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="337" y="165" key="com.intellij.ide.util.TipDialog/0.0.1280.680@0.0.1280.680" timestamp="1584796348889" />
+    <state x="337" y="165" key="com.intellij.ide.util.TipDialog/0.0.1280.680@0.0.1280.680" timestamp="1586325309778" />
+    <state width="600" height="424" key="javadoc.popup" timestamp="1586500437280">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="600" height="424" key="javadoc.popup/0.0.1280.680@0.0.1280.680" timestamp="1586500437280" />
+    <state x="383" y="0" key="refactoring.ChangeSignatureDialog" timestamp="1586519305615">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="383" y="0" key="refactoring.ChangeSignatureDialog/0.0.1280.680@0.0.1280.680" timestamp="1586519305615" />
   </component>
 </project>

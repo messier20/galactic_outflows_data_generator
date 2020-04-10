@@ -1,71 +1,53 @@
 import itertools
-import decimal
 import matplotlib.pyplot as plt
-
-from data_generator.configurations.initial_galaxy_params import smbh_masses_initial, bulge_disc_gas_fractions
+import data_generator.configurations.initial_galaxy_params as init
+from data_generator.configurations.units import unit_sunmass, unit_kpc
+from data_generator.data_models.initial_masses_calculations import calc_bulge_masses
 from data_generator.data_models.arrays_modifier import *
+import time
 
+from data_generator.mathematical_calculations.mass_calculation import mass_calculation
+
+mas = []
 if __name__ == '__main__':
-    bulge_masses = np.zeros((len(smbh_masses_initial), 1))
-    theoretical_bulge_mass = np.zeros((len(smbh_masses_initial), 1))
+    # bulge_disc_gas_fraction
+    for virial_galaxy_mass in init.virial_galaxies_masses:
 
-    for index, bh_mass in enumerate(smbh_masses_initial):
+        virial_radius = (626 * (((virial_galaxy_mass / (10 ** 13)) * unit_sunmass) ** (1 / 3))) / unit_kpc
 
+        for out_indx, (smbh_mass_init, bulge_disc_gas_fraction) in enumerate(itertools.product(init.smbh_masses_initial,
+                                                                    init.bulge_disc_gas_fractions)):
 
-        alpha = 8.46
-        theoretical_bulge_mass_log = (np.log10(bh_mass) - alpha) / 1.05
-        alpha = 7.86 #8.06
-        theoretical_bulge_mass_log_less = (np.log10(bh_mass) - alpha) / 1.05
-        alpha = 9.06
-        # alpha = 9.12
-        theoretical_bulge_mass_log_more = (np.log10(bh_mass) - alpha) / 1.05
-        theoretical_bulge_mass[index] = (10 ** theoretical_bulge_mass_log) * 1e11
-        theoretical_bulge_mass_less = (10 ** theoretical_bulge_mass_log_less) * 1e11
-        theoretical_bulge_mass_more = (10 ** theoretical_bulge_mass_log_more) * 1e11
-        print(format(theoretical_bulge_mass_less, '.2e'), ' less')
-        print(format(theoretical_bulge_mass_more, '.2e'), 'more')
-        # bulge_masses[index] = np.logspace(theoretical_bulge_mass_log_more, theoretical_bulge_mass_log_less, 10, dtype='int64')*1e11
-        # bulge_masses[index] = np.random.RandomState(0).uniform(theoretical_bulge_mass_more, theoretical_bulge_mass_less, size=10)
-        np.random.seed(index+3)
-        bulge_masses_log = np.random.uniform(theoretical_bulge_mass_log_more, theoretical_bulge_mass_log_less, size=1)
-        bulge_masses[index] = (10**bulge_masses_log)*1e11
-        # print(bulge_masses)
-    plt.xscale('log')
-    plt.yscale('log')
-    plt.xlim(1e8, 1e13)
-    plt.ylim(1e6, 4e10)
-    plt.xlabel('$M_{bulge}$')
-    plt.ylabel('$M_{BH}$')
-    all_bhm = [[j for i in range(len(bulge_masses[0]))] for j in smbh_masses_initial]
+            is_main_loop = True
+            radius_arr, dot_radius_arr, dotdot_radius_arr, mass_out_arr, total_mass_arr, dot_mass_arr, time_arr, \
+                dot_time_arr, luminosity_AGN_arr, smbh_mass_arr = init_zero_arrays(arrays_count=10)
+
+            bulge_masses = calc_bulge_masses(smbh_mass_init, out_indx)
+            # check if this shouldn't be division from virial galaxy mass
+            bulge_disc_totalmass_fractions = bulge_masses/1.e13
+            bulge_scales = [((bulge_mass / 1.e11) ** 0.88) * 2.4 * 2 / unit_kpc for bulge_mass in bulge_masses]
+            print(bulge_scales)
+
+            for bulge_index, bulge_disc_totalmass_fraction in enumerate(bulge_disc_totalmass_fractions):
+                radius_arr[0] = init.radius
+                dot_radius_arr[0] = init.dot_radius
+                dotdot_radius_arr[0] = init.dotdot_radius
 
 
+                index = 0
+                while is_main_loop:
+                    (mp, mdp, mg, mdg, mddg, rhogas, sigma, deltaphi, phi, phigrad, rhogas2, mb) = \
+                        mass_calculation(radius_arr[0], dot_radius_arr[0], dotdot_radius_arr[0], virial_galaxy_mass,
+                                         virial_radius, init.halo_concentration_parameter, bulge_scales[bulge_index],
+                                         bulge_disc_totalmass_fraction, init.halo_gas_fraction, bulge_disc_gas_fraction,
+                                         init.bulge_to_total_mass)
 
-    # plt.scatter(bulge_masses[0,], [smbh_masses_initial[0], smbh_masses_initial[0], smbh_masses_initial[0], smbh_masses_initial[0], smbh_masses_initial[0]] )
-    # print(np.array(all_bhm))
-    print(bulge_masses.shape)
-    print(np.array(all_bhm).shape)
-    plt.scatter(bulge_masses, all_bhm)
-    plt.plot(theoretical_bulge_mass, smbh_masses_initial, 'r')
-    # plt.show()
-    plt.savefig('seed+3_seedn7_nonlog_alpha9-06_280_1full_wide.png')
+                        # mass_calculation(radius_arr[k, index], dot_radius_arr[k, index], dotdot_radius_arr[k, index],
+                        #                  delta_radius_arr[k, index], total_masses[k], virial_radiuses[k],
+                        #                  halo_concentration_parameters[k],
+                        #                  bulge_scale, disc_scale, bulge_disc_totalmass_fraction,
+                        #                  halo_gas_fraction, bulge_disc_gas_fractions[k], bulge_totalmasses[k])
 
-    # for smbh_mass_init, bulge_disc_gas_fraction in itertools.product(smbh_masses_initial, bulge_disc_gas_fractions):
-    #
-    #     is_main_loop = True
-    #     radius_arr, dot_radius_arr, dotdot_radius_arr, mass_out_arr, total_mass_arr, dot_mass_arr, time_arr, \
-    #         dot_time_arr, luminosity_AGN_arr, smbh_mass_arr = init_zero_arrays(arrays_count=10)
-    #
-    #     # alpha = 8.46
-    #     # theoretical_bulge_mass_log = (np.log10(1e8) - alpha)/ 1.05
-    #     # alpha = 7.46
-    #     # theoretical_bulge_mass_log_less = (np.log10(1e8) - alpha)/ 1.05
-    #     # alpha = 9.46
-    #     # theoretical_bulge_mass_log_more = (np.log10(1e8) - alpha)/ 1.05
-    #     # theoretical_bulge_mass = (10**theoretical_bulge_mass_log)*1e11
-    #     # bulge_masses = np.logspace((10**theoretical_bulge_mass_log_less)*1e11, (10**theoretical_bulge_mass_log_more)*1e11, 5)
-    #
-    #     index = 0
-    #     while is_main_loop:
-    #         index = + 1
-    #         print(index)
-    #         is_main_loop = False
+                    index = + 1
+                    # print(index)
+                    is_main_loop = False
