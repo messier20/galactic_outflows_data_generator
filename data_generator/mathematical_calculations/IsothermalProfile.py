@@ -22,8 +22,8 @@ class IsothermalProfile:
         dotdot_mass = total_mass * dotdot_radius_current / scale_radius
         density = total_mass / (4 * math.pi * (radius_current ** 3))
         density2 = total_mass / (4 * math.pi * ((4. * radius_current / 3.) ** 3))
-        phi = mass / radius_current * math.log(radius_current / (2.718281828 * phi_coef * scale_radius))
-        phigrad = mass / (radius_current ** 2)
+        phi = total_mass / radius_current * math.log(radius_current / (2.718281828 * phi_coef * scale_radius))
+        phigrad = total_mass / (radius_current ** 2)
 
         if mass > total_mass:
             mass = total_mass

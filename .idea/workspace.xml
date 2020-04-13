@@ -2,22 +2,59 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0e66c5af-f6c1-4cf8-9b05-46217e833a18" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/data_generator/configurations/physical_values.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data_generator/data_models/initial_masses_calculations.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data_generator/mathematical_calculations/IsothermalProfile.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data_generator/mathematical_calculations/NFWProfile.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data_generator/mathematical_calculations/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data_generator/mathematical_calculations/mass_calculation.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_generator/configurations/path_version_settings.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_generator/configurations/physics_constants.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_generator/configurations/switches.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_generator/mathematical_calculations/DrivingForceIntegrator.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_generator/mathematical_calculations/FadeTypeSwitcher.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_generator/results/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plotting_program/plots/generic_time_relation_plot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/galactic-outflows-nn.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/galactic-outflows-nn.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_generator/configurations/constants.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_generator/configurations/constants.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data_generator/configurations/initial_galaxy_params.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_generator/configurations/initial_galaxy_params.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_generator/configurations/physical_values.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_generator/configurations/physical_values.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_generator/configurations/units.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_generator/configurations/units.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data_generator/data_models/arrays_modifier.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_generator/data_models/arrays_modifier.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_generator/data_models/initial_masses_calculations.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_generator/data_models/initial_masses_calculations.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_generator/log_alpha9-12_40.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_generator/log_alpha9-12_40_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_generator/logspace_alpha9-12_10.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/data_generator/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_generator/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_generator/seed+3_seedn7_nonlog_alpha9-06_280_1full_wide.png" beforeDir="false" afterPath="$PROJECT_DIR$/data_generator/seed+3_seedn7_nonlog_alpha9-06_280_1full_wide.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_generator/mathematical_calculations/IsothermalProfile.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_generator/mathematical_calculations/IsothermalProfile.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_generator/mathematical_calculations/mass_calculation.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_generator/mathematical_calculations/mass_calculation.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_generator/randomState_log_alpha9-12_10.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_generator/randomState_log_alpha9-12_40.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_generator/randomState_nonlog_alpha9-12_10.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_generator/randomstate_alpha9-06.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_generator/randomstate_alpha9-12.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_generator/randomstate_alpha9-12_10.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_generator/seed_log_alpha9-12_10_full.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_generator/seed_log_alpha9-12_25.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_generator/seed_log_alpha9-12_25_full.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_generator/seed_log_alpha9-12_25_full_wide.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_generator/seed_log_alpha9-12_40.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_generator/seed_nonlog_alpha9-12_25_full_wide.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_generator/seed_seed3_nonlog_alpha9-12_25_34full_wide.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_generator/seed_seed_nonlog_alpha9-12_25_30full_wide.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_generator/seed_seed_nonlog_alpha9-12_25_35full_wide.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_generator/seed_seed_nonlog_alpha9-12_25_full_wide.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_generator/seed_seedn0_nonlog_alpha9-12_25_34full_wide.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_generator/seed_seedn1_nonlog_alpha9-12_25_34full_wide.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_generator/seed_seedn2_nonlog_alpha9-12_25_34full_wide.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_generator/seed_seedn3_nonlog_alpha9-12_50_5full_wide.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_generator/seed_seedn4_nonlog_alpha9-12_25_34full_wide.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_generator/seed_seedn5_nonlog_alpha9-12_25_34full_wide.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_generator/seed_seedn5_nonlog_alpha9-12_50_5full_wide.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_generator/seed_seedn7_nonlog_alpha9-12_25_34full_wide.png" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="galactic-outflows-nn" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -40,9 +77,9 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../SMBHs" />
-    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.plots_main">
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="galactic-outflows-nn" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -64,6 +101,31 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="plots_main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="galactic-outflows-nn" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Users\Monika\AppData\Local\Programs\Python\Python38-32\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/plotting_program" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/plotting_program/plots_main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Python.main" />
+      <item itemvalue="Python.plots_main" />
+    </list>
   </component>
   <component name="ServiceViewManager">
     <option name="viewStates">
@@ -91,34 +153,54 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="96" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1582285323722">
+    <state x="96" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1586687349831">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="96" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.680@0.0.1280.680" timestamp="1582285323722" />
-    <state x="421" y="96" key="FileChooserDialogImpl" timestamp="1582450918449">
+    <state x="96" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.680@0.0.1280.680" timestamp="1586687349831" />
+    <state x="421" y="96" key="FileChooserDialogImpl" timestamp="1586718231300">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="421" y="96" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1582450918449" />
-    <state width="1281" height="137" key="GridCell.Tab.0.bottom" timestamp="1586535324482">
+    <state x="421" y="96" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1586718231300" />
+    <state width="1281" height="199" key="GridCell.Tab.0.bottom" timestamp="1586764390654">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1281" height="137" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1586535324482" />
-    <state width="1281" height="137" key="GridCell.Tab.0.center" timestamp="1586535324481">
+    <state width="1281" height="199" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1586764390654" />
+    <state width="1281" height="199" key="GridCell.Tab.0.center" timestamp="1586764390654">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1281" height="137" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1586535324481" />
-    <state width="1281" height="137" key="GridCell.Tab.0.left" timestamp="1586535324481">
+    <state width="1281" height="199" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1586764390654" />
+    <state width="1281" height="199" key="GridCell.Tab.0.left" timestamp="1586764390654">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1281" height="137" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1586535324481" />
-    <state width="1281" height="137" key="GridCell.Tab.0.right" timestamp="1586535324481">
+    <state width="1281" height="199" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1586764390654" />
+    <state width="1281" height="199" key="GridCell.Tab.0.right" timestamp="1586764390654">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1281" height="137" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1586535324481" />
-    <state x="337" y="165" key="com.intellij.ide.util.TipDialog" timestamp="1586325309778">
+    <state width="1281" height="199" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1586764390654" />
+    <state width="1281" height="199" key="GridCell.Tab.1.bottom" timestamp="1586754360268">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="337" y="165" key="com.intellij.ide.util.TipDialog/0.0.1280.680@0.0.1280.680" timestamp="1586325309778" />
+    <state width="1281" height="199" key="GridCell.Tab.1.bottom/0.0.1280.680@0.0.1280.680" timestamp="1586754360268" />
+    <state width="1281" height="199" key="GridCell.Tab.1.center" timestamp="1586754360268">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1281" height="199" key="GridCell.Tab.1.center/0.0.1280.680@0.0.1280.680" timestamp="1586754360268" />
+    <state width="1281" height="199" key="GridCell.Tab.1.left" timestamp="1586754360267">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1281" height="199" key="GridCell.Tab.1.left/0.0.1280.680@0.0.1280.680" timestamp="1586754360267" />
+    <state width="1281" height="199" key="GridCell.Tab.1.right" timestamp="1586754360268">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1281" height="199" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1586754360268" />
+    <state x="142" y="0" key="SettingsEditor" timestamp="1586753495655">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="142" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1586753495655" />
+    <state x="337" y="165" key="com.intellij.ide.util.TipDialog" timestamp="1586720534367">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="337" y="165" key="com.intellij.ide.util.TipDialog/0.0.1280.680@0.0.1280.680" timestamp="1586720534367" />
     <state width="600" height="424" key="javadoc.popup" timestamp="1586500437280">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -127,5 +209,21 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="383" y="0" key="refactoring.ChangeSignatureDialog/0.0.1280.680@0.0.1280.680" timestamp="1586519305615" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/data_generator/main.py</url>
+          <line>127</line>
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/data_generator/main.py</url>
+          <line>133</line>
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

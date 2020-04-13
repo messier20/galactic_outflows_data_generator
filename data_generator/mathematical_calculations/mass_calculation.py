@@ -24,8 +24,9 @@ def mass_calculation(radius, dot_radius, dotdot_radius, total_mass, virial_radiu
     """
 
     halo_scale = virial_radius / halo_concentration_parameter
+    radius_scaled = radius / halo_scale
 
-    NFW_halo_profile = NFW(radius / halo_scale, halo_concentration_parameter)
+    NFW_halo_profile = NFW(radius_scaled, halo_concentration_parameter)
     (mass_halo, dot_mass_halo, dotdot_mass_halo, rho_halo, rho2_halo, phi_halo, phigrad_halo) = \
         NFW_halo_profile.calculate_halo_profile(total_mass, radius, dot_radius, dotdot_radius, halo_scale)
 
@@ -86,6 +87,8 @@ def mass_calculation(radius, dot_radius, dotdot_radius, total_mass, virial_radiu
     #         1 + delta_radius / radius + (delta_radius ** 2) / (3. * radius ** 2)) * (phih + phib)
 
     sigma = math.sqrt(mass_halo * fraction_of_galaxy_in_halo + mass_bulge / 2 / radius)
+
+    # print((mass_halo + mass_bulge)* unit_sunmass, ' funk')
 
     return potential_mass_halo + mass_bulge_potential, dot_potential_mass_halo + dot_mass_bulge_potential, \
            gas_mass_halo + mass_bulge_gas, dot_gas_mass_halo + dot_mass_bulge_gas, \

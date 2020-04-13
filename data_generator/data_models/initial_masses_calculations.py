@@ -1,6 +1,7 @@
 import numpy as np
 
 from data_generator.configurations.physical_values import intercept_alpha, slope_beta, bulge_normalization_mass
+from data_generator.configurations.units import unit_sunmass
 
 
 def calc_bulge_masses(smbh_mass, index, alpha=intercept_alpha, beta=slope_beta, norm_mass=bulge_normalization_mass):
@@ -11,9 +12,10 @@ def calc_bulge_masses(smbh_mass, index, alpha=intercept_alpha, beta=slope_beta, 
     theor_bulge_mass_log_left = (np.log10(smbh_mass) - alpha_left) / beta
     theor_bulge_mass_right = (10 ** theor_bulge_mass_log_right) * norm_mass
     theor_bulge_mass_left = (10 ** theor_bulge_mass_log_left) * norm_mass
-    np.random.seed(index)
+    np.random.seed(int(np.ceil(smbh_mass*100)))
+    # np.random.seed(index)
     bulge_masses_log = np.random.uniform(theor_bulge_mass_log_left, theor_bulge_mass_log_right, size=2)
-    return (10 ** bulge_masses_log) * 1e11
+    return ((10 ** bulge_masses_log) * 1e11) * unit_sunmass
 
 
 # def calc_smbh_bulge_masses():

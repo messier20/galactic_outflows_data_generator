@@ -1,6 +1,6 @@
 import math
 
-from data_generator.configurations.constants import GRAVITATIONAL
+from data_generator.configurations.physics_constants import GRAVITATIONAL
 
 unit_length = 3.086e21
 unit_mass = 5e9 * 1.989e33
