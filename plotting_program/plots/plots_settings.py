@@ -1,14 +1,16 @@
 import os
 # from model_program.input_parameters.initial_values import version
+from data_generator.configurations.path_version_settings import values_version_folder, version
 
-# graphs_path = "./graphs/"
-# plots_version_folder = 'v' + str(version) + '.3/'
+graphs_path = "./graphs/"
+plots_version_folder = 'v' + str(version) + '.0/'
 # plots_version_folder = ''
-# try:
-#     os.mkdir(graphs_path + plots_version_folder)
-# except:
-#     print('ex')
-#     pass
+# plots_version_folder = values_version_folder + '1/'
+try:
+    os.mkdir(graphs_path + plots_version_folder)
+except:
+    print('ex')
+    pass
 
 plot_velocities = 0
 plot_massrate = 0

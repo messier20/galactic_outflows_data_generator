@@ -1,9 +1,12 @@
+from MiraTitanHMFemulator import MiraTitanHMFemulator
+
 import data_generator.configurations.units as unt
 import numpy as np
 import matplotlib.pyplot as plt
 
 # from data_generator.data_models._initial_masses_calculations import calc_smbh_bulge_masses
 from data_generator.configurations.constants import RADIATIVE_EFFICIENCY_ETA
+from hmf.hmf import get_hmf
 
 np.random.seed(7)
 # smbh_masses_initial1 = np.random.uniform(6.3, 9.85, size=150)
@@ -15,9 +18,34 @@ smbh_masses_initial = smbh_masses_initial/ unt.unit_sunmass
 # smbh_masses_initial = [1.e8 / unt.unit_sunmass]
 bulge_disc_gas_fractions = [0.05, 0.1, 0.25, 0.5, 1.]
 
-virial_galaxies_masses1 = np.random.uniform(10, 14, size=50)
-# virial_galaxies_masses = 10**virial_galaxies_masses1
-virial_galaxies_masses = [1.e13 / unt.unit_sunmass]
+# TODO maybe sample with non logarithmic scale?
+virial_galaxies_masses1 = np.random.uniform(11, 14.2, size=150)
+virial_galaxies_masses = 10**virial_galaxies_masses1
+#
+# virial_galaxies_masses = virial_galaxies_masses / unt.unit_sunmass
+# virial_galaxies_masses = [1.e13 / unt.unit_sunmass]
+
+# virial_galaxies_masses = virial_galaxies_masses*unt.unit_sunmass
+
+# HMFemu = MiraTitanHMFemulator.Emulator()
+# fiducial_cosmo = {'Ommh2': .3*.7**2,
+#                   'Ombh2': .022,
+#                   'Omnuh2': .0006,
+#                   'n_s': .96,
+#                   'h': .7,
+#                   'w_0': -1,
+#                   'w_a': 0,
+#                   'sigma_8': .8,
+#                  }
+#
+# raw_res = HMFemu.predict_raw_emu(fiducial_cosmo)
+#
+# print(len(raw_res[0.0]['log10_M']), 'masses')
+# virial_galaxies_masses = raw_res[0.0]['log10_M']
+# virial_galaxies_masses = (10**virial_galaxies_masses)*0.6777
+
+print(virial_galaxies_masses[0])
+
 halo_concentration_parameter = 10
 
 halo_gas_fraction = 1.e-3  # gas fraction in the halo

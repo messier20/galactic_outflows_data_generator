@@ -25,12 +25,14 @@ def mass_calculation(radius, dot_radius, dotdot_radius, total_mass, virial_radiu
 
     halo_scale = virial_radius / halo_concentration_parameter
     radius_scaled = radius / halo_scale
+    fraction_of_galaxy_in_halo = 1 - bulge_disc_to_totalmass_fraction
+    halo_mass = fraction_of_galaxy_in_halo * total_mass
 
     NFW_halo_profile = NFW(radius_scaled, halo_concentration_parameter)
     (mass_halo, dot_mass_halo, dotdot_mass_halo, rho_halo, rho2_halo, phi_halo, phigrad_halo) = \
         NFW_halo_profile.calculate_halo_profile(total_mass, radius, dot_radius, dotdot_radius, halo_scale)
 
-    fraction_of_galaxy_in_halo = 1 - bulge_disc_to_totalmass_fraction
+    # fraction_of_galaxy_in_halo = 1 - bulge_disc_to_totalmass_fraction
     halo_non_gass_fraction = 1 - halo_gas_fraction
     dark_matter_fraction_in_halo = fraction_of_galaxy_in_halo * halo_non_gass_fraction
 

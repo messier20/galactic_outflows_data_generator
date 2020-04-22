@@ -17,6 +17,9 @@ def calc_bulge_masses(smbh_mass, index, alpha=intercept_alpha, beta=slope_beta, 
     bulge_masses_log = np.random.uniform(theor_bulge_mass_log_left, theor_bulge_mass_log_right, size=2)
     return ((10 ** bulge_masses_log) * 1e11) * unit_sunmass
 
+def calc_smbh_masses(virial_mass):
+    log_smbh_mass = 8.18 + (1.55*(np.log10(virial_mass) - 13.0))
+
 
 # def calc_smbh_bulge_masses():
 #     smbh_bulge_mass_tuple = []
