@@ -14,7 +14,7 @@ RADIATIVE_EFFICIENCY_ETA = 0.1  # ;radiative efficiency
 GAMMA = 5./3. #;adiabatic index of the outflowing material
 
 TIME_MAX = 1.5e8/unit_year            #;time until the end of simulation, in years
-RADIUS_MAX = 25./unit_kpc             #;stop the simulation once the c.d. reaches this radius
+RADIUS_MAX = 12./unit_kpc             #;stop the simulation once the c.d. reaches this radius
 
 ETA_DRIVE = 0.05                        #coupling efficiency between luminosity or momentum and driving power/force ///
 

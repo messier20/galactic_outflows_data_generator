@@ -2,314 +2,73 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0e66c5af-f6c1-4cf8-9b05-46217e833a18" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plotting_program/plots/generic_radius_relation.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/galactic-outflows-nn.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/galactic-outflows-nn.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_generator/configurations/constants.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_generator/configurations/constants.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data_generator/configurations/initial_galaxy_params.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_generator/configurations/initial_galaxy_params.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_generator/configurations/switches.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_generator/configurations/switches.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data_generator/data_models/initial_masses_calculations.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_generator/data_models/initial_masses_calculations.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data_generator/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_generator/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_generator/mathematical_calculations/mass_calculation.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_generator/mathematical_calculations/mass_calculation.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v4.2.1/dot-mass-bulge-mass-average-fix-fit-ln.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v4.2.1/dot-radius-bulge-mass-average-fix-fit-ln.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v4.2.1/dotmass-radiusmb100fix-fix.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v4.2.1/dotmass-radiusmb200fix-fix.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v4.2.1/dotmass-radiusmb20fix-fix.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v4.2.1/dotmass-radiusmb300fix-fix.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v4.2.1/dotmass-radiusmb30fix-fix.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v4.2.1/dotmass-radiusmb40fix-fix.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v4.2.1/dotmass-radiusmb50fix-fix.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v4.2.1/dotmass-radiusmb60fix-fix.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v4.2.1/dotmass-radiusmb70fix-fix.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v4.2.1/dotmass-radiusmb80fix-fix.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v4.2.1/dotmass-radiusmb90fix-fix.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v4.2.1/radius-time-mb100-fix.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v4.2.1/radius-time-mb20-fix.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v4.2.1/radius-time-mb200-fix.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v4.2.1/radius-time-mb30-fix.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v4.2.1/radius-time-mb300-fix.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v4.2.1/radius-time-mb40-fix.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v4.2.1/radius-time-mb50-fix.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v4.2.1/radius-time-mb60-fix.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v4.2.1/radius-time-mb70-fix.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v4.2.1/radius-time-mb80-fix.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v4.2.1/radius-time-mb90-fix.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v4.2.1/vel-radius-mb100-fix.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v4.2.1/vel-radius-mb20-fix.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v4.2.1/vel-radius-mb200-fix.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v4.2.1/vel-radius-mb30-fix.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v4.2.1/vel-radius-mb300-fix.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v4.2.1/vel-radius-mb40-fix.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v4.2.1/vel-radius-mb50-fix.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v4.2.1/vel-radius-mb60-fix.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v4.2.1/vel-radius-mb70-fix.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v4.2.1/vel-radius-mb80-fix.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v4.2.1/vel-radius-mb90-fix.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v4.2.2/radius-time-mb100-fix.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v4.2.2/radius-time-mb20-fix.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v4.2.2/radius-time-mb200-fix.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v4.2.2/radius-time-mb30-fix.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v4.2.2/radius-time-mb300-fix.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v4.2.2/radius-time-mb40-fix.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v4.2.2/radius-time-mb50-fix.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v4.2.2/radius-time-mb60-fix.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v4.2.2/radius-time-mb70-fix.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v4.2.2/radius-time-mb80-fix.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v4.2.2/radius-time-mb90-fix.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v4.3.2/dm-bulge-gas-frac.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v4.3.2/dot-mass-bulge-mass-average-fix-fit-ln.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v4.3.2/dot-mass-bulge-mass-calc-fix-fit-ln.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v4.3.2/dot-mass-bulge-mass-max-fix-fit-ln.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v4.3.2/dot-radius-bulge-mass-average-fix-fit-ln.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v4.3.2/dot-radius-bulge-mass-calc-fix-fit-ln.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v4.3.2/dot-radius-bulge-mass-max-fix-fit-ln.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v4.3.2/dotmass-calc--radiusmb100.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v4.3.2/dotmass-calc--radiusmb20.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v4.3.2/dotmass-calc--radiusmb200.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v4.3.2/dotmass-calc--radiusmb30.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v4.3.2/dotmass-calc--radiusmb300.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v4.3.2/dotmass-calc--radiusmb40.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v4.3.2/dotmass-calc--radiusmb50.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v4.3.2/dotmass-calc--radiusmb60.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v4.3.2/dotmass-calc--radiusmb70.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v4.3.2/dotmass-calc--radiusmb80.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v4.3.2/dotmass-calc--radiusmb90.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v4.3.2/dotmass-radiusmb100.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v4.3.2/dotmass-radiusmb20.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v4.3.2/dotmass-radiusmb200.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v4.3.2/dotmass-radiusmb30.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v4.3.2/dotmass-radiusmb300.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v4.3.2/dotmass-radiusmb40.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v4.3.2/dotmass-radiusmb50.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v4.3.2/dotmass-radiusmb60.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v4.3.2/dotmass-radiusmb70.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v4.3.2/dotmass-radiusmb80.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v4.3.2/dotmass-radiusmb90.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v4.3.2/obstimemb100.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v4.3.2/obstimemb20.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v4.3.2/obstimemb200.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v4.3.2/obstimemb30.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v4.3.2/obstimemb300.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v4.3.2/obstimemb40.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v4.3.2/obstimemb50.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v4.3.2/obstimemb60.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v4.3.2/obstimemb70.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v4.3.2/obstimemb80.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v4.3.2/obstimemb90.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v4.3.2/out-mass-mb100.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v4.3.2/out-mass-mb20.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v4.3.2/out-mass-mb200.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v4.3.2/out-mass-mb30.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v4.3.2/out-mass-mb300.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v4.3.2/out-mass-mb40.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v4.3.2/out-mass-mb50.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v4.3.2/out-mass-mb60.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v4.3.2/out-mass-mb70.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v4.3.2/out-mass-mb80.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v4.3.2/out-mass-mb90.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v4.3.2/radius-time-mb100-fix.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v4.3.2/radius-time-mb20-fix.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v4.3.2/radius-time-mb200-fix.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v4.3.2/radius-time-mb30-fix.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v4.3.2/radius-time-mb300-fix.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v4.3.2/radius-time-mb40-fix.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v4.3.2/radius-time-mb50-fix.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v4.3.2/radius-time-mb60-fix.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v4.3.2/radius-time-mb70-fix.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v4.3.2/radius-time-mb80-fix.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v4.3.2/radius-time-mb90-fix.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v4.3.2/threepart3mb100.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v4.3.2/threepart3mb20.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v4.3.2/threepart3mb200.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v4.3.2/threepart3mb30.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v4.3.2/threepart3mb300.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v4.3.2/threepart3mb40.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v4.3.2/threepart3mb50.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v4.3.2/threepart3mb60.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v4.3.2/threepart3mb70.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v4.3.2/threepart3mb80.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v4.3.2/threepart3mb90.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v4.3.2/vel-radius-mb100.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v4.3.2/vel-radius-mb20.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v4.3.2/vel-radius-mb200.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v4.3.2/vel-radius-mb30.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v4.3.2/vel-radius-mb300.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v4.3.2/vel-radius-mb40.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v4.3.2/vel-radius-mb50.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v4.3.2/vel-radius-mb60.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v4.3.2/vel-radius-mb70.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v4.3.2/vel-radius-mb80.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v4.3.2/vel-radius-mb90.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v4.3.2/velocity-bulge-gas-frac.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.2/dm-bulge-gas-frac.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.2/dot-mass-bulge-mass-average-fix-fit-ln.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.2/dot-mass-bulge-mass-calc-fix-fit-ln.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.2/dot-mass-bulge-mass-max-fix-fit-ln.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.2/dot-radius-bulge-mass-average-fix-fit-ln.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.2/dot-radius-bulge-mass-calc-fix-fit-ln.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.2/dot-radius-bulge-mass-max-fix-fit-ln.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.2/dotmass-calc--radiusmb100.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.2/dotmass-calc--radiusmb20.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.2/dotmass-calc--radiusmb200.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.2/dotmass-calc--radiusmb30.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.2/dotmass-calc--radiusmb300.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.2/dotmass-calc--radiusmb40.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.2/dotmass-calc--radiusmb50.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.2/dotmass-calc--radiusmb60.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.2/dotmass-calc--radiusmb70.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.2/dotmass-calc--radiusmb80.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.2/dotmass-calc--radiusmb90.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.2/dotmass-radiusmb100.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.2/dotmass-radiusmb20.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.2/dotmass-radiusmb200.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.2/dotmass-radiusmb30.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.2/dotmass-radiusmb300.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.2/dotmass-radiusmb40.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.2/dotmass-radiusmb50.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.2/dotmass-radiusmb60.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.2/dotmass-radiusmb70.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.2/dotmass-radiusmb80.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.2/dotmass-radiusmb90.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.2/obstimemb100.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.2/obstimemb20.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.2/obstimemb200.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.2/obstimemb30.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.2/obstimemb300.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.2/obstimemb40.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.2/obstimemb50.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.2/obstimemb60.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.2/obstimemb70.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.2/obstimemb80.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.2/obstimemb90.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.2/out-mass-mb100.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.2/out-mass-mb20.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.2/out-mass-mb200.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.2/out-mass-mb30.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.2/out-mass-mb300.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.2/out-mass-mb40.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.2/out-mass-mb50.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.2/out-mass-mb60.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.2/out-mass-mb70.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.2/out-mass-mb80.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.2/out-mass-mb90.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.2/radius-time-mb100-fix.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.2/radius-time-mb20-fix.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.2/radius-time-mb200-fix.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.2/radius-time-mb30-fix.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.2/radius-time-mb300-fix.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.2/radius-time-mb40-fix.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.2/radius-time-mb50-fix.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.2/radius-time-mb60-fix.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.2/radius-time-mb70-fix.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.2/radius-time-mb80-fix.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.2/radius-time-mb90-fix.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.2/threepart3mb100.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.2/threepart3mb20.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.2/threepart3mb200.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.2/threepart3mb30.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.2/threepart3mb300.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.2/threepart3mb40.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.2/threepart3mb50.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.2/threepart3mb60.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.2/threepart3mb70.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.2/threepart3mb80.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.2/threepart3mb90.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.2/vel-radius-mb100.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.2/vel-radius-mb20.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.2/vel-radius-mb200.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.2/vel-radius-mb30.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.2/vel-radius-mb300.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.2/vel-radius-mb40.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.2/vel-radius-mb50.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.2/vel-radius-mb60.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.2/vel-radius-mb70.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.2/vel-radius-mb80.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.2/vel-radius-mb90.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.2/velocity-bulge-gas-frac.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.3/dm-bulge-gas-frac.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.3/dot-mass-bulge-mass-average-fix-fit-ln.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.3/dot-mass-bulge-mass-calc-fix-fit-ln.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.3/dot-mass-bulge-mass-max-fix-fit-ln.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.3/dot-radius-bulge-mass-average-fix-fit-ln.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.3/dot-radius-bulge-mass-calc-fix-fit-ln.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.3/dot-radius-bulge-mass-max-fix-fit-ln.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.3/dotmass-calc--radiusmb100.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.3/dotmass-calc--radiusmb20.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.3/dotmass-calc--radiusmb200.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.3/dotmass-calc--radiusmb30.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.3/dotmass-calc--radiusmb300.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.3/dotmass-calc--radiusmb40.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.3/dotmass-calc--radiusmb50.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.3/dotmass-calc--radiusmb60.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.3/dotmass-calc--radiusmb70.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.3/dotmass-calc--radiusmb80.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.3/dotmass-calc--radiusmb90.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.3/dotmass-radiusmb100.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.3/dotmass-radiusmb20.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.3/dotmass-radiusmb200.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.3/dotmass-radiusmb30.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.3/dotmass-radiusmb300.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.3/dotmass-radiusmb40.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.3/dotmass-radiusmb50.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.3/dotmass-radiusmb60.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.3/dotmass-radiusmb70.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.3/dotmass-radiusmb80.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.3/dotmass-radiusmb90.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.3/obstimemb100.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.3/obstimemb20.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.3/obstimemb200.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.3/obstimemb30.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.3/obstimemb300.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.3/obstimemb40.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.3/obstimemb50.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.3/obstimemb60.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.3/obstimemb70.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.3/obstimemb80.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.3/obstimemb90.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.3/out-mass-mb100.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.3/out-mass-mb20.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.3/out-mass-mb200.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.3/out-mass-mb30.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.3/out-mass-mb300.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.3/out-mass-mb40.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.3/out-mass-mb50.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.3/out-mass-mb60.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.3/out-mass-mb70.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.3/out-mass-mb80.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.3/out-mass-mb90.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.3/radius-time-mb100-fix.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.3/radius-time-mb20-fix.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.3/radius-time-mb200-fix.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.3/radius-time-mb30-fix.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.3/radius-time-mb300-fix.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.3/radius-time-mb40-fix.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.3/radius-time-mb50-fix.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.3/radius-time-mb60-fix.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.3/radius-time-mb70-fix.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.3/radius-time-mb80-fix.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.3/radius-time-mb90-fix.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.3/threepart3mb100.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.3/threepart3mb20.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.3/threepart3mb200.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.3/threepart3mb30.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.3/threepart3mb300.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.3/threepart3mb40.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.3/threepart3mb50.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.3/threepart3mb60.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.3/threepart3mb70.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.3/threepart3mb80.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.3/threepart3mb90.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.3/vel-radius-mb100.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.3/vel-radius-mb20.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.3/vel-radius-mb200.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.3/vel-radius-mb30.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.3/vel-radius-mb300.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.3/vel-radius-mb40.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.3/vel-radius-mb50.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.3/vel-radius-mb60.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.3/vel-radius-mb70.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.3/vel-radius-mb80.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.3/vel-radius-mb90.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v5.0.3/velocity-bulge-gas-frac.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_generator/mathematical_calculations/IsothermalProfile.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_generator/mathematical_calculations/IsothermalProfile.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_generator/results/v1.5/_0_0_0.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data_generator/results/v1.5/_0_0_0.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_generator/results/v1.5/_0_10_0.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data_generator/results/v1.5/_0_10_0.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_generator/results/v1.5/_0_11_0.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data_generator/results/v1.5/_0_11_0.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_generator/results/v1.5/_0_12_0.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data_generator/results/v1.5/_0_12_0.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_generator/results/v1.5/_0_13_0.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data_generator/results/v1.5/_0_13_0.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_generator/results/v1.5/_0_14_0.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data_generator/results/v1.5/_0_14_0.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_generator/results/v1.5/_0_15_0.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data_generator/results/v1.5/_0_15_0.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_generator/results/v1.5/_0_16_0.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data_generator/results/v1.5/_0_16_0.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_generator/results/v1.5/_0_17_0.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data_generator/results/v1.5/_0_17_0.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_generator/results/v1.5/_0_18_0.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data_generator/results/v1.5/_0_18_0.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_generator/results/v1.5/_0_19_0.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data_generator/results/v1.5/_0_19_0.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_generator/results/v1.5/_0_1_0.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data_generator/results/v1.5/_0_1_0.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_generator/results/v1.5/_0_20_0.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data_generator/results/v1.5/_0_20_0.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_generator/results/v1.5/_0_21_0.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data_generator/results/v1.5/_0_21_0.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_generator/results/v1.5/_0_22_0.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data_generator/results/v1.5/_0_22_0.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_generator/results/v1.5/_0_23_0.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data_generator/results/v1.5/_0_23_0.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_generator/results/v1.5/_0_24_0.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data_generator/results/v1.5/_0_24_0.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_generator/results/v1.5/_0_2_0.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data_generator/results/v1.5/_0_2_0.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_generator/results/v1.5/_0_3_0.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data_generator/results/v1.5/_0_3_0.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_generator/results/v1.5/_0_4_0.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data_generator/results/v1.5/_0_4_0.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_generator/results/v1.5/_0_5_0.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data_generator/results/v1.5/_0_5_0.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_generator/results/v1.5/_0_6_0.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data_generator/results/v1.5/_0_6_0.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_generator/results/v1.5/_0_7_0.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data_generator/results/v1.5/_0_7_0.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_generator/results/v1.5/_0_8_0.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data_generator/results/v1.5/_0_8_0.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_generator/results/v1.5/_0_9_0.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data_generator/results/v1.5/_0_9_0.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_generator/results/v1.5/_1_0_0.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data_generator/results/v1.5/_1_0_0.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_generator/results/v1.5/_1_10_0.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data_generator/results/v1.5/_1_10_0.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_generator/results/v1.5/_1_11_0.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data_generator/results/v1.5/_1_11_0.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_generator/results/v1.5/_1_12_0.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data_generator/results/v1.5/_1_12_0.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_generator/results/v1.5/_1_13_0.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data_generator/results/v1.5/_1_13_0.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_generator/results/v1.5/_1_14_0.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data_generator/results/v1.5/_1_14_0.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_generator/results/v1.5/_1_15_0.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data_generator/results/v1.5/_1_15_0.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_generator/results/v1.5/_1_16_0.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data_generator/results/v1.5/_1_16_0.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_generator/results/v1.5/_1_17_0.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data_generator/results/v1.5/_1_17_0.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_generator/results/v1.5/_1_18_0.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data_generator/results/v1.5/_1_18_0.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_generator/results/v1.5/_1_19_0.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data_generator/results/v1.5/_1_19_0.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_generator/results/v1.5/_1_1_0.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data_generator/results/v1.5/_1_1_0.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_generator/results/v1.5/_1_20_0.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data_generator/results/v1.5/_1_20_0.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_generator/results/v1.5/_1_21_0.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data_generator/results/v1.5/_1_21_0.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_generator/results/v1.5/_1_22_0.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data_generator/results/v1.5/_1_22_0.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_generator/results/v1.5/_1_23_0.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data_generator/results/v1.5/_1_23_0.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_generator/results/v1.5/_1_24_0.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data_generator/results/v1.5/_1_24_0.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_generator/results/v1.5/_1_2_0.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data_generator/results/v1.5/_1_2_0.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_generator/results/v1.5/_1_3_0.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data_generator/results/v1.5/_1_3_0.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_generator/results/v1.5/_1_4_0.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data_generator/results/v1.5/_1_4_0.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_generator/results/v1.5/_1_5_0.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data_generator/results/v1.5/_1_5_0.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_generator/results/v1.5/_1_6_0.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data_generator/results/v1.5/_1_6_0.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_generator/results/v1.5/_1_7_0.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data_generator/results/v1.5/_1_7_0.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_generator/results/v1.5/_1_8_0.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data_generator/results/v1.5/_1_8_0.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_generator/results/v1.5/_1_9_0.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data_generator/results/v1.5/_1_9_0.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_generator/results/v1.5/properties_map.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data_generator/results/v1.5/properties_map.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v1.5.0/vel-radius-0-same-bulgemass.png" beforeDir="false" afterPath="$PROJECT_DIR$/plotting_program/graphs/v1.5.0/vel-radius-0-same-bulgemass.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v1.5.0/vel-radius-0-same-gasf.png" beforeDir="false" afterPath="$PROJECT_DIR$/plotting_program/graphs/v1.5.0/vel-radius-0-same-gasf.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v1.5.0/vel-radius-1-same-bulgemass.png" beforeDir="false" afterPath="$PROJECT_DIR$/plotting_program/graphs/v1.5.0/vel-radius-1-same-bulgemass.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v1.5.0/vel-radius-1-same-gasf.png" beforeDir="false" afterPath="$PROJECT_DIR$/plotting_program/graphs/v1.5.0/vel-radius-1-same-gasf.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v1.5.0/vel-radius-2-same-gasf.png" beforeDir="false" afterPath="$PROJECT_DIR$/plotting_program/graphs/v1.5.0/vel-radius-2-same-gasf.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v1.5.0/vel-radius-3-same-gasf.png" beforeDir="false" afterPath="$PROJECT_DIR$/plotting_program/graphs/v1.5.0/vel-radius-3-same-gasf.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plotting_program/graphs/v1.5.0/vel-radius-4-same-gasf.png" beforeDir="false" afterPath="$PROJECT_DIR$/plotting_program/graphs/v1.5.0/vel-radius-4-same-gasf.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/plotting_program/plots/generic_time_relation_plot.py" beforeDir="false" afterPath="$PROJECT_DIR$/plotting_program/plots/generic_time_relation_plot.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/plotting_program/plots/plots_settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/plotting_program/plots/plots_settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/plotting_program/plots_main.py" beforeDir="false" afterPath="$PROJECT_DIR$/plotting_program/plots_main.py" afterDir="false" />
@@ -343,7 +102,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../SMBHs" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PythonContentEntriesConfigurable" />
   </component>
   <component name="RunManager" selected="Python.main">
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
@@ -427,46 +186,46 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="371" y="88" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1280.680@0.0.1280.680" timestamp="1587398293291" />
-    <state x="421" y="96" key="FileChooserDialogImpl" timestamp="1586718231300">
+    <state x="421" y="96" key="FileChooserDialogImpl" timestamp="1587668680899">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="421" y="96" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1586718231300" />
-    <state width="1281" height="190" key="GridCell.Tab.0.bottom" timestamp="1587453222057">
+    <state x="421" y="96" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1587668680899" />
+    <state width="1281" height="173" key="GridCell.Tab.0.bottom" timestamp="1587679189751">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1281" height="190" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1587453222057" />
-    <state width="1281" height="190" key="GridCell.Tab.0.center" timestamp="1587453222056">
+    <state width="1281" height="173" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1587679189751" />
+    <state width="1281" height="173" key="GridCell.Tab.0.center" timestamp="1587679189751">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1281" height="190" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1587453222056" />
-    <state width="1281" height="190" key="GridCell.Tab.0.left" timestamp="1587453222055">
+    <state width="1281" height="173" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1587679189751" />
+    <state width="1281" height="173" key="GridCell.Tab.0.left" timestamp="1587679189751">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1281" height="190" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1587453222055" />
-    <state width="1281" height="190" key="GridCell.Tab.0.right" timestamp="1587453222056">
+    <state width="1281" height="173" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1587679189751" />
+    <state width="1281" height="173" key="GridCell.Tab.0.right" timestamp="1587679189751">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1281" height="190" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1587453222056" />
-    <state width="1281" height="333" key="GridCell.Tab.1.bottom" timestamp="1586780639398">
+    <state width="1281" height="173" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1587679189751" />
+    <state width="1281" height="271" key="GridCell.Tab.1.bottom" timestamp="1587677669907">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1281" height="333" key="GridCell.Tab.1.bottom/0.0.1280.680@0.0.1280.680" timestamp="1586780639398" />
-    <state width="1281" height="333" key="GridCell.Tab.1.center" timestamp="1586780639398">
+    <state width="1281" height="271" key="GridCell.Tab.1.bottom/0.0.1280.680@0.0.1280.680" timestamp="1587677669907" />
+    <state width="1281" height="271" key="GridCell.Tab.1.center" timestamp="1587677669907">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1281" height="333" key="GridCell.Tab.1.center/0.0.1280.680@0.0.1280.680" timestamp="1586780639398" />
-    <state width="1281" height="333" key="GridCell.Tab.1.left" timestamp="1586780639398">
+    <state width="1281" height="271" key="GridCell.Tab.1.center/0.0.1280.680@0.0.1280.680" timestamp="1587677669907" />
+    <state width="1281" height="271" key="GridCell.Tab.1.left" timestamp="1587677669907">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1281" height="333" key="GridCell.Tab.1.left/0.0.1280.680@0.0.1280.680" timestamp="1586780639398" />
-    <state width="1281" height="333" key="GridCell.Tab.1.right" timestamp="1586780639398">
+    <state width="1281" height="271" key="GridCell.Tab.1.left/0.0.1280.680@0.0.1280.680" timestamp="1587677669907" />
+    <state width="1281" height="271" key="GridCell.Tab.1.right" timestamp="1587677669907">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1281" height="333" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1586780639398" />
-    <state x="142" y="0" key="SettingsEditor" timestamp="1587409849010">
+    <state width="1281" height="271" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1587677669907" />
+    <state x="142" y="0" key="SettingsEditor" timestamp="1587671788801">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="142" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1587409849010" />
+    <state x="142" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1587671788801" />
     <state x="362" y="82" width="540" height="524" key="StructurePopup" timestamp="1587398335745">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -489,22 +248,58 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/data_generator/main.py</url>
-          <line>166</line>
+          <line>145</line>
           <option name="timeStamp" value="17" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/data_generator/main.py</url>
-          <line>172</line>
+          <line>153</line>
           <option name="timeStamp" value="18" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/data_generator/configurations/initial_galaxy_params.py</url>
-          <line>55</line>
-          <option name="timeStamp" value="33" />
+          <url>file://$PROJECT_DIR$/data_generator/mathematical_calculations/IsothermalProfile.py</url>
+          <line>25</line>
+          <option name="timeStamp" value="38" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/data_generator/data_models/initial_masses_calculations.py</url>
-          <option name="timeStamp" value="34" />
+          <url>file://$PROJECT_DIR$/data_generator/main.py</url>
+          <line>142</line>
+          <option name="timeStamp" value="40" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/data_generator/mathematical_calculations/mass_calculation.py</url>
+          <line>48</line>
+          <option name="timeStamp" value="41" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/data_generator/mathematical_calculations/mass_calculation.py</url>
+          <line>76</line>
+          <option name="timeStamp" value="42" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/data_generator/main.py</url>
+          <line>88</line>
+          <option name="timeStamp" value="43" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/plotting_program/plots_main.py</url>
+          <line>25</line>
+          <option name="timeStamp" value="45" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/plotting_program/plots_main.py</url>
+          <line>36</line>
+          <option name="timeStamp" value="46" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/data_generator/configurations/initial_galaxy_params.py</url>
+          <line>82</line>
+          <option name="timeStamp" value="48" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/data_generator/configurations/initial_galaxy_params.py</url>
+          <line>23</line>
+          <option name="timeStamp" value="49" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

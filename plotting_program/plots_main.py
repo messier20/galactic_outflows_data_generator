@@ -2,6 +2,7 @@ import pandas as pd
 
 from data_generator.configurations.path_version_settings import params_path, values_version_folder
 from plotting_program.plots.generic_time_relation_plot import generic_time_relation_plot
+from plotting_program.plots.generic_radius_relation import generic_radius_relation_plot
 
 params_output_name = params_path + values_version_folder
 outflow_props = []
@@ -23,6 +24,7 @@ for indication_index, gas_fraction in enumerate(unique_bulge_gas_fractions):
         file_name = params_output_name + '_' + str(galaxy_props_map.bulge_index.values[index]) + '_' + str(galaxy_props_map.params_index.values[index]) + '_0.csv'
         outflow_props.append(pd.read_csv(file_name))
     generic_time_relation_plot(outflow_props, str(indication_index) + '-same-gasf')
+    generic_radius_relation_plot(outflow_props, str(indication_index) + '-same-gasf')
 
 for indication_index, bulge_mass in enumerate(unique_bulge_masses):
     same_bulge_masses = galaxy_props_map[galaxy_props_map.bulge_mass == bulge_mass]
@@ -33,3 +35,5 @@ for indication_index, bulge_mass in enumerate(unique_bulge_masses):
         file_name = params_output_name + '_' + str(galaxy_props_map.bulge_index.values[index]) + '_' + str(galaxy_props_map.params_index.values[index]) + '_0.csv'
         outflow_props.append(pd.read_csv(file_name))
     generic_time_relation_plot(outflow_props, indication=str(indication_index) + '-same-bulgemass')
+    generic_radius_relation_plot(outflow_props, indication=str(indication_index) + '-same-bulgemass')
+
