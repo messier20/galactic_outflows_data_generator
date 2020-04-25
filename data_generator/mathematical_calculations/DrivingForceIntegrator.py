@@ -44,7 +44,7 @@ class DrivingForceIntegrator:
                            dotdot_radius, eta_drive):
         dot_rt_arr[index] = dot_rt
         dotdot_radius_arr[index + 1] = dotdot_radius + dot_rt * dt
-        dot_radius_arr[index + 1] = dot_radius + dotdot_radius * dt + 0.5 * dot_rt * (dt ** 2)
+        dot_radius_arr[index + 1] = dot_radius + dotdot_radius * dt + 0.5 * dot_rt * (dt ** 2.)
         artificial_cap = 2 * eta_drive * LIGHT_SPEED
         if dot_radius_arr[index + 1] > artificial_cap:
             dot_radius_arr[index + 1] = artificial_cap
@@ -56,9 +56,9 @@ class DrivingForceIntegrator:
         if dot_radius > artificial_cap:
             radius_arr[index + 1] = radius + dot_radius * dt
         else:
-            radius_arr[index + 1] = radius + dot_radius * dt + 0.5 * dotdot_radius * dt ** 2 + (1. / 6.) * dot_rt * dt ** 3
+            radius_arr[index + 1] = radius + dot_radius * dt + 0.5 * dotdot_radius * dt ** 2. + (1. / 6.) * dot_rt * dt ** 3.
 
-        return radius_arr, dot_radius_arr, dotdot_radius, dot_rt_arr
+        return radius_arr, dot_radius_arr, dotdot_radius_arr, dot_rt_arr
 
     def leap_frog_dkd(self, dot_rt, dot_rt_arr, radius_arr, dot_radius_arr, dotdot_radius_arr, index, dt, radius,
                       dot_radius,

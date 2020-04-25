@@ -1,63 +1,39 @@
 import itertools
 import math
-import os
+import time
 
 import matplotlib.pyplot as plt
 import pandas as pd
 
 import data_generator.configurations.initial_galaxy_params as init
 import data_generator.configurations.switches as swch
-import data_generator.configurations.constants as const
 import data_generator.configurations.units as unt
 from data_generator.configurations.path_version_settings import params_path, values_version_folder
-from data_generator.data_models.initial_masses_calculations import calc_bulge_masses, calc_smbh_masses
 from data_generator.data_models.arrays_modifier import *
-
-import time
-
+from data_generator.data_models.initial_masses_calculations import calc_bulge_masses, calc_smbh_masses
 from data_generator.mathematical_calculations.DrivingForceIntegrator import DrivingForceIntegrator
 from data_generator.mathematical_calculations.FadeTypeSwitcher import FadeTypeSwitcher
 from data_generator.mathematical_calculations.mass_calculation import mass_calculation
-
-# version = 1.0
 
 if __name__ == '__main__':
     np.seterr(divide='ignore', invalid='ignore')
     start_time = time.time()
 
-    # params_path = "C:/Users/Monika/PycharmProjects/SMBHs/model_program/results/output_values/"
-    # params_path = "C:/Users/Monika/PycharmProjects/galactic-outflows-nn/data_generator/results/"
-    # values_version_folder = 'v' + str(version) + '/'
-    # try:
-    #     os.mkdir(params_path + values_version_folder)
-    # except:
-    #     pass
-
-    # bulge_disc_gas_fraction
     FadeTypeSwitcher = FadeTypeSwitcher()
     Integrator = DrivingForceIntegrator()
-    header = True
+    db_file_header = True
     df_index = 0
-    # virial_mass = []
+    virial_mass = []
     smbh_m = []
     bulge_mas = []
     spc_bm = []
-    # alpha_left = 8.18 + 0.13
-    # alpha_right = 8.18 - 0.13
-    # # alpha_right = 8.18
-    # # alpha_left = 8.18
-    # beta_left = 1.57 + 0.39
-    # beta_right = 1.57 - 0.39
-    # # beta_left = 1.57
-    # # beta_right = 1.57
-    #
-    # alpha_parameters = np.random.uniform(alpha_left, alpha_right, len(init.virial_galaxies_masses))
-    # # alpha_parameters = np.random.normal(8.18, 0.13, len(init.virial_galaxies_masses))
-    # beta_parameters = np.random.uniform(beta_left, beta_right, len(init.virial_galaxies_masses))
-    # # beta_parameters = np.random.normal(1.57, 0.39, len(init.virial_galaxies_masses))
-    # print(alpha_parameters)
-    # print(beta_parameters)
-    count = 0
+    indices = []
+
+    columns = 'radius_arr', 'dot_radius_arr', 'time_arr', 'dot_mass_arr', 'mass_out_arr', 'total_mass_arr', 'luminosity_AGN_arr'
+    # all_params_columns = 'radius', 'dot_radius', 'dot_mass', 'mass_out', 'total_mass', \
+    #                      'luminosity_AGN', 'smbh_mass', 'duty_cycle', 't_initial_smbh_mass', 'bulge_mass', 'bulge_gas', \
+    #                      'galaxy_mass', 'quasar_duration', 'fade_type'
+
     for gal_index, virial_galaxy_mass in enumerate(init.virial_galaxies_masses):
 
         virial_radius = (626 * (((virial_galaxy_mass / (10 ** 13)) * unt.unit_sunmass) ** (1 / 3))) / unt.unit_kpc
@@ -67,29 +43,33 @@ if __name__ == '__main__':
         bulge_disc_totalmass_fractions = bulge_masses / (virial_galaxy_mass * unt.unit_sunmass)
         bulge_scales = [((bulge_mass / 1.e11) ** 0.88) * 2.4 * 2 / unt.unit_kpc for bulge_mass in bulge_masses]
 
-        # smbh_m.append((initial_smbh_mass * unt.unit_sunmass))
-        # virial_mass.append(virial_galaxy_mass * unt.unit_sunmass)
 
-        for out_indx, (bulge_disc_gas_fraction, initial_smbh_mass, quasar_duration, fade) in enumerate(
-                itertools.product(init.bulge_disc_gas_fractions, current_smbh_masses, init.quasar_durations, swch.fade_arr)):
+        for out_indx, (bulge_disc_gas_fraction, initial_smbh_mass, quasar_duration, fade, duty_cycle) in enumerate(
+                itertools.product(init.bulge_disc_gas_fractions, current_smbh_masses, init.quasar_durations, swch.fade_arr.values(), init.duty_cycles)):
+
+            # loop_time = time.time()
+            # if fade == const.FADE.KING:
+            #     quasar_dt = (48*quasar_duration) / duty_cycle
+            quasar_dt = quasar_duration / duty_cycle
 
 
             for bulge_index, bulge_disc_totalmass_fraction in enumerate(bulge_disc_totalmass_fractions):
-                loop_time = time.time()
 
                 radius_arr, dot_radius_arr, dotdot_radius_arr, dotdotdot_radius_arr, mass_out_arr, total_mass_arr, dot_mass_arr, time_arr, \
                 dot_time_arr, luminosity_AGN_arr, smbh_mass_arr, bulge_mass_arr = init_zero_arrays(arrays_count=12)
                 radius_arr[0] = init.radius
                 dot_radius_arr[0] = init.dot_radius
                 dotdot_radius_arr[0] = init.dotdot_radius
-                smbh_mass = initial_smbh_mass
+                smbh_mass_arr[0] = initial_smbh_mass
 
                 is_main_loop = True
                 index = 0
                 while is_main_loop:
                     (mass_potential, dot_mass_potential, mass_gas, dot_mass_gas, dotdot_mass_gas, rho_gas, sigma, phi,
-                     phigrad, rhog_as2, mass_bulge) = mass_calculation(radius_arr[index], dot_radius_arr[index],
-                                                                       dotdot_radius_arr[index], virial_galaxy_mass,
+                     phigrad, rhog_as2, mass_bulge) = mass_calculation(radius_arr[index],
+                                                                       dot_radius_arr[index],
+                                                                       dotdot_radius_arr[index],
+                                                                       virial_galaxy_mass,
                                                                        virial_radius, init.halo_concentration_parameter,
                                                                        bulge_scales[bulge_index],
                                                                        bulge_disc_totalmass_fraction,
@@ -113,23 +93,23 @@ if __name__ == '__main__':
                     dot_time_arr[index + 1] = dt
                     time_arr[index + 1] = time_arr[index] + dt
 
-                    quasar_dt = quasar_duration/ 0.1
                     if swch.repeating_equation:
                         time_eff = time_arr[index] % quasar_dt
                     else:
                         time_eff = time_arr[index]
 
-                    luminosity_coef = FadeTypeSwitcher.calc_luminosity_coef(swch.fade, time_eff, quasar_duration,
+                    luminosity_coef = FadeTypeSwitcher.calc_luminosity_coef(fade, time_eff, quasar_duration,
                                                                             init.eddingtion_ratio)
                     luminosity_edd = 1.3e38 * (
-                            smbh_mass * unt.unit_mass / 1.989e33) * unt.unit_time / unt.unit_energy  # ;eddington luminosity for the current SMBH mass
+                            smbh_mass_arr[index] * unt.unit_mass / 1.989e33) * unt.unit_time / unt.unit_energy  # ;eddington luminosity for the current SMBH mass
+
                     luminosity = luminosity_coef * luminosity_edd
                     luminosity_AGN_arr[index + 1] = luminosity  # ;actual luminosity
 
                     if swch.smbh_grows:
-                        smbh_mass = smbh_mass * math.exp(luminosity_coef * dt / init.salpeter_timescale)
-
-                    (radius_arr, dot_radius_arr, dotdot_radius, dotdotdot_radius_arr) = \
+                        smbh_mass_arr[index+1] = smbh_mass_arr[index] * math.exp(luminosity_coef * dt / init.salpeter_timescale)
+                    # TODO change implementation without passing arrays
+                    (radius_arr, dot_radius_arr, dotdot_radius_arr, dotdotdot_radius_arr) = \
                         Integrator.driving_force_calc(swch.driving_force, mass_gas, radius_arr[index], const.ETA_DRIVE,
                                                       swch.integration_method, luminosity, dot_mass_gas,
                                                       dot_radius_arr[index], dotdot_radius_arr[index], mass_potential,
@@ -141,30 +121,16 @@ if __name__ == '__main__':
                     index += 1
 
                     if index >= len(radius_arr) - 1:
-                        print(' timesteps')
+                        # print(' timesteps')
                         is_main_loop = False
-                        print('Iteration number ', bulge_index, ' finished')
-                        exec_time = time.time()
-                        print("exec time --- %s seconds ---" % (time.time() - loop_time))
-                        count += 1
 
                     if time_arr[index] >= const.TIME_MAX:
-                        print('time')
+                        # print('time')
                         is_main_loop = False
-                        print('Iteration number ', bulge_index, ' finished')
-                        exec_time = time.time()
-                        print("exec time --- %s seconds ---" % (time.time() - loop_time))
-                        count += 1
 
                     if radius_arr[index] >= const.RADIUS_MAX:
-                        print('radiusmax')
+                        # print('radiusmax')
                         is_main_loop = False
-                        print('Iteration number ', bulge_index, ' finished')
-                        exec_time = time.time()
-                        print("exec time --- %s seconds ---" % (time.time() - loop_time))
-                        count += 1
-
-
 
                 radius_arr = radius_arr * unt.unit_kpc
                 dot_radius_arr = dot_radius_arr * unt.unit_velocity / 1.e5
@@ -174,27 +140,21 @@ if __name__ == '__main__':
                 dot_mass_arr = dot_mass_arr * unt.unit_sunmass / unt.unit_year
                 mass_out_arr = mass_out_arr * unt.unit_sunmass
                 total_mass_arr = total_mass_arr * unt.unit_sunmass
+                smbh_mass_arr = smbh_mass_arr * unt.unit_sunmass
 
-                bulge_mass_arr = bulge_mass_arr * unt.unit_sunmass
+                # bulge_mass_arr = bulge_mass_arr * unt.unit_sunmass
+                w_initial_smbh_mass = initial_smbh_mass * unt.unit_sunmass
+                w_virial_galaxy_mass = virial_galaxy_mass * unt.unit_sunmass
+                w_quasar_duration = quasar_duration * unt.unit_year
                 # observed_time_arr = radius_arr / dot_radius_arr
 
-                #
-
-                radius_reduced_arr = np.where(radius_arr > 0.02, radius_arr, np.nan)
-                dot_radius_reduced_arr = np.where(radius_arr > 0.02, dot_radius_arr, np.nan)
-                dot_radius_reduced_arr.shape = dot_radius_arr.shape
-                time_reduced_arr = np.where(radius_arr > 0.02, time_arr, np.nan)
-                dot_mass_reduced_arr = np.where(radius_arr > 0.02, dot_mass_arr, np.nan)
-                mass_out_reduced_arr = np.where(radius_arr > 0.02, mass_out_arr, np.nan)
-                total_mass_reduced_arr = np.where(radius_arr > 0.02, total_mass_arr, np.nan)
-                luminosity_AGN_reduced_arr = np.where(radius_arr > 0.02, luminosity_AGN_arr, np.nan)
+                reducion_indices = np.where(radius_arr > 0.02)
                 # observed_time_reduced_arr = np.where(radius_arr > 0.02, observed_time_arr, np.nan)
 
                 outflow_properties_df = pd.DataFrame(
-                    np.array([radius_reduced_arr, dot_radius_reduced_arr, time_reduced_arr,
-                              dot_mass_reduced_arr, mass_out_reduced_arr,
-                              total_mass_reduced_arr, luminosity_AGN_reduced_arr]).transpose())
-                columns = 'radius_arr', 'dot_radius_arr', 'time_arr', 'dot_mass_arr', 'mass_out_arr', 'total_mass_arr', 'luminosity_AGN_arr'
+                    np.array([radius_arr[reducion_indices], dot_radius_arr[reducion_indices], time_arr[reducion_indices],
+                              dot_mass_arr[reducion_indices], mass_out_arr[reducion_indices],
+                              total_mass_arr[reducion_indices], luminosity_AGN_arr[reducion_indices]]).transpose())
                 outflow_properties_df.columns = columns
 
                 outflow_properties_df.to_csv(
@@ -202,25 +162,71 @@ if __name__ == '__main__':
                         out_indx) + '_' + str(gal_index) + '.csv'),
                     header=True, index=False)
 
-                galaxy_properties_df = pd.DataFrame({'smbh_mass': initial_smbh_mass * unt.unit_sunmass, 'bulge_mass': bulge_masses[bulge_index],
-                                                     'bulge_gas_frac': bulge_disc_gas_fraction, 'galaxy_mass': virial_galaxy_mass,
+                del outflow_properties_df
+
+                galaxy_properties_df = pd.DataFrame({'smbh_mass': w_initial_smbh_mass, 'bulge_mass': bulge_masses[bulge_index],
+                                                     'bulge_gas_frac': bulge_disc_gas_fraction, 'galaxy_mass': w_virial_galaxy_mass,
+                                                     'quasar_duration': w_quasar_duration, 'fade_type': fade.value,
+                                                     'duty_cycle': duty_cycle,
                                                      'bulge_index': bulge_index, 'params_index': out_indx, 'galaxy_index':
                                                          gal_index}, index=[df_index])
-                smbh_m.append(initial_smbh_mass * unt.unit_sunmass)
+                smbh_m.append(w_initial_smbh_mass)
                 bulge_mas.append(bulge_masses[bulge_index])
+                virial_mass.append((w_virial_galaxy_mass))
 
-                # print(galaxy_properties_df)
-                # galaxy_df_columns = 'smbh_mass', 'bulge_mass', 'bulge_gas_frac', 'bulge_index', 'params_index', 'galaxy_index'
-                # galaxy_properties_df.columns = galaxy_df_columns
-                mode = 'w' if header else 'a'
-                galaxy_properties_df.to_csv((str(params_path) + values_version_folder + 'properties_map.csv'), mode=mode, header=header, index=False)
-                header = False
-                df_index +=1
+                mode = 'w' if db_file_header else 'a'
+                galaxy_properties_df.to_csv((str(params_path) + values_version_folder + 'properties_map.csv'), mode=mode, header=db_file_header, index=False)
+                # db_file_header = False
+                # df_index +=1
+                del galaxy_properties_df
+
+                subtracted_indices = reducion_indices[0][::3]
+
+                temp_initial_smbh_mass = [w_initial_smbh_mass for i in range(len(subtracted_indices))]
+                temp_bulge_masses = [bulge_masses[bulge_index] for i in range(len(subtracted_indices))]
+                temp_bulge_disc_gas_fraction = [bulge_disc_gas_fraction for i in range(len(subtracted_indices))]
+                temp_virial_galaxy_mass = [w_virial_galaxy_mass for i in range(len(subtracted_indices))]
+                temp_quasar_duration = [w_quasar_duration for i in range(len(subtracted_indices))]
+                temp_duty_cycle = [duty_cycle for i in range(len(subtracted_indices))]
+
+                temp_fade = np.array([fade.value for i in range(len(subtracted_indices))], dtype='U25')
+                # d = dict([(y, x + 1) for x, y in enumerate(fade_arr)])
+                # indices = indices[]
+
+                all_parameters = np.column_stack([radius_arr[subtracted_indices], dot_radius_arr[subtracted_indices],
+                                                  dot_mass_arr[subtracted_indices], mass_out_arr[subtracted_indices],
+                                                  luminosity_AGN_arr[subtracted_indices],
+                                                  smbh_mass_arr[subtracted_indices], temp_duty_cycle,
+                                                  temp_initial_smbh_mass, temp_bulge_masses,
+                                                  temp_bulge_disc_gas_fraction,
+                                                  temp_virial_galaxy_mass, temp_quasar_duration, temp_fade])
+
+                all_params_columns = ['radius', 'dot_radius', 'dot_mass', 'mass_out','luminosity_AGN', 'smbh_mass', \
+                                     'duty_cycle', 't_initial_smbh_mass', 'bulge_mass', 'bulge_gas', 'galaxy_mass', \
+                                     'quasar_duration', 'fade_type']
+                df_all_parameters = pd.DataFrame(all_parameters, columns=all_params_columns)
+
+                mode = 'w' if db_file_header else 'a'
+                df_all_parameters.to_csv((str(params_path) + values_version_folder + 'train_data.csv'),
+                                            mode=mode, header=db_file_header, index=False, encoding="utf-8")
+                db_file_header = False
+                df_index += 1
+
+                del temp_initial_smbh_mass
+                del temp_bulge_masses
+                del temp_bulge_disc_gas_fraction
+                del temp_virial_galaxy_mass
+                del temp_quasar_duration
+                del temp_fade
+                del all_parameters
+
+                # print("exec time --- %s seconds ---" % (time.time() - loop_time))
+                # print()
+
 
     print('passed time', time.time() - start_time)
     # print(bulge_mas)
     # print(smbh_m)
-    print(count, 'count')
 
     plt.xlabel('mbulge')
     plt.ylabel('smbh_m')
@@ -230,31 +236,23 @@ if __name__ == '__main__':
     plt.ylim(3e5, 5e11)
     plt.scatter(bulge_mas, smbh_m)
     # plt.scatter(spc_bm, smbh_m, c='r')
-    plt.show()
-    # plt.savefig('.png')
+    # plt.show()
+    plt.savefig('bulge-smbh2.png')
 
     # print(smbh_m)
     # print(virial_mass)
 
-    # plt.xlabel('mtot')
-    # plt.ylabel('smbh_m')
-    # plt.xscale('log')
-    # plt.yscale('log')
-    # plt.xlim(3e11, 1e15)
-    # plt.ylim(3e6, 5e11)
-    # plt.scatter(virial_mass, smbh_m, s=1)
+    plt.xlabel('mtot')
+    plt.ylabel('smbh_m')
+    plt.xscale('log')
+    plt.yscale('log')
+    plt.xlim(3e11, 1e15)
+    plt.ylim(3e6, 5e11)
+    plt.scatter(virial_mass, smbh_m, s=1)
     # plt.show()
-    # plt.savefig('smbh-mtot.png')
+    plt.savefig('smbh-mtot2.png')
 
-# TODO write in one file like in this example and probably use extended pandas frame as for plotting
 
-# header = True
-# for dataset in datasets:
-#     df = pd.DataFrame(dataset)
-#     df = df[columns]
-#     mode = 'w' if header else 'a'
-#     df.to_csv('./new.csv', encoding='utf-8', mode=mode, header=header, index=False)
-#     header = False
 # TODO choose between csv and npy
 # category = ['none' for i in range(len(luminosity_AGN_reduced_arr[0]))]
 #

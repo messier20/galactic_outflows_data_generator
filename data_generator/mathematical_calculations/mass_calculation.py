@@ -26,7 +26,7 @@ def mass_calculation(radius, dot_radius, dotdot_radius, total_mass, virial_radiu
     halo_scale = virial_radius / halo_concentration_parameter
     radius_scaled = radius / halo_scale
     fraction_of_galaxy_in_halo = 1 - bulge_disc_to_totalmass_fraction
-    halo_mass = fraction_of_galaxy_in_halo * total_mass
+    # halo_mass = fraction_of_galaxy_in_halo * total_mass
 
     NFW_halo_profile = NFW(radius_scaled, halo_concentration_parameter)
     (mass_halo, dot_mass_halo, dotdot_mass_halo, rho_halo, rho2_halo, phi_halo, phigrad_halo) = \
@@ -38,9 +38,9 @@ def mass_calculation(radius, dot_radius, dotdot_radius, total_mass, virial_radiu
 
     # p-potential, tai kas ne dujos
     potential_mass_halo = mass_halo * dark_matter_fraction_in_halo
-    darkmattermass = potential_mass_halo * unit_sunmass
+    # darkmattermass = potential_mass_halo * unit_sunmass
     dot_potential_mass_halo = dot_mass_halo * dark_matter_fraction_in_halo
-    dotdot_mass_halo_potential = dotdot_mass_halo * dark_matter_fraction_in_halo
+    # dotdot_mass_halo_potential = dotdot_mass_halo * dark_matter_fraction_in_halo
     potential_phi_halo = phi_halo * dark_matter_fraction_in_halo  # gravitacinis potencialas
     potential_phigrad_halo = phigrad_halo * dark_matter_fraction_in_halo
 
@@ -57,7 +57,7 @@ def mass_calculation(radius, dot_radius, dotdot_radius, total_mass, virial_radiu
     rhohgas2 = rho2_halo * fraction_of_galaxy_in_halo * halo_gas_fraction
 
     whole_bulge_mass = bulge_totalmass * bulge_disc_to_totalmass_fraction * total_mass
-    bulge_scaled = radius / bulge_scale
+    # bulge_scaled = radius / bulge_scale
 
     isothermal_profile = IsothermalProfile()
     (mass_bulge, dot_mass_bulge, dotdot_mass_bulge, rho_bulge, rho2_bulge, phi_bulge, phi_grad_bulge) = \
@@ -68,7 +68,7 @@ def mass_calculation(radius, dot_radius, dotdot_radius, total_mass, virial_radiu
 
     mass_bulge_potential = mass_bulge * fraction_of_bulge_mass_within_r
     dot_mass_bulge_potential = dot_mass_bulge * fraction_of_bulge_mass_within_r
-    dotdot_mass_bulge_potential = dotdot_mass_bulge * fraction_of_bulge_mass_within_r
+    # dotdot_mass_bulge_potential = dotdot_mass_bulge * fraction_of_bulge_mass_within_r
     phi_bulge_potential = phi_bulge * fraction_of_bulge_mass_within_r
     phigrad_bulge_potential = phi_grad_bulge * fraction_of_bulge_mass_within_r
 

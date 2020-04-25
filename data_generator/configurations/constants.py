@@ -35,6 +35,8 @@ class FADE(Enum):
     POWER_LAW = 'power_law'
     KING = 'king'
 
+# FADE_dict = {0: FADE.NONE, 1:FADE.EXPONENTIAL, 2: FADE.POWER_LAW, 3: FADE.KING}
+
 
 class DRIVING_FORCE(Enum):
     ENERGY_DRIVING = 'energy_driving'

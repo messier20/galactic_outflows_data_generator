@@ -1,6 +1,6 @@
 import os
 
-version = 1.5
+version = 3
 params_path = "C:/Users/Monika/PycharmProjects/galactic-outflows-nn/data_generator/results/"
 values_version_folder = 'v' + str(version) + '/'
 try:
