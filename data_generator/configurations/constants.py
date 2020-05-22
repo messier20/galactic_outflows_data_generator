@@ -6,7 +6,12 @@ TIMESTEPS_NUMB = 30000
 
 
 DT_MIN = 1 / unit_year  # ;1 year
-DT_MAX = 15000. * DT_MIN  # ;15000 years
+# DT_MAX = 15000. * DT_MIN  # ;15000 years
+# DT_MAX = 150000. * DT_MIN  # ;15000 years
+# DT_MAX = 80000. * DT_MIN  # ;15000 years
+DT_MAX_SMALL_OUTFLOWS = 30000. * DT_MIN
+DT_MAX_BIG_OUTFLOWS = 100000. * DT_MIN
+
 T_MAX = 1.5e8 / unit_year  # ;time until the end of simulation, in years
 R_MAX = 200. / unit_kpc  # ;stop the simulation once the c.d. reaches this radius_
 
@@ -47,3 +52,15 @@ class INTEGRATION_METHOD(Enum):
     SIMPLE_INTEGRATION = 'simple_integration'
     LEAP_FROG_DKD = 'leap_frog_dkd'
     LEAP_FROG_KDK = 'leap_frog_dkd'
+
+class PROPERTIES_MAP_COLUMNS(Enum):
+    SMBH_MASS = 'smbh_mass'
+    BULGE_MASS = 'bulge_mass'
+    BULGE_GAS_FRAC = 'bulge_gas_frac'
+    GALAXY_MASS = 'galaxy_mass'
+    QUASAR_DURATION = 'quasar_duration'
+    FADE_TYPE = 'fade_type'
+    DUTY_CYCLE = 'duty_cycle'
+    PARAMS_INDEX = 'params_index'
+    GALAXY_INDEX = 'galaxy_index'
+    OUTFLOW_SPHERE_ANGLE = 'outflow_sphare_angle'

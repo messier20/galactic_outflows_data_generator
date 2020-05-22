@@ -11,3 +11,7 @@ dr_r_on = True
 dm_bm_on = False
 obs_time_on = True
 relations_with_calc_dm = False
+
+display_galaxy_and_gas_dependence = False
+display_gas_and_galaxy_dependence = False
+display_angle_dependence = False

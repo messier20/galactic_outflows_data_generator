@@ -4,7 +4,7 @@ from data_generator.configurations.physical_values import intercept_alpha, slope
 from data_generator.configurations.units import unit_sunmass
 
 
-def calc_bulge_masses(smbh_mass, index, alpha=intercept_alpha, beta=slope_beta, norm_mass=bulge_normalization_mass):
+def calc_bulge_masses(smbh_mass, index, size, alpha=intercept_alpha, beta=slope_beta, norm_mass=bulge_normalization_mass):
     alpha_left = alpha + 0.6
     alpha_right = alpha - 0.6
 
@@ -19,7 +19,7 @@ def calc_bulge_masses(smbh_mass, index, alpha=intercept_alpha, beta=slope_beta, 
     s = int(np.ceil(smbh_mass*10000))
     np.random.seed(s)
     # np.random.seed(index)
-    bulge_masses_log = np.random.uniform(theor_bulge_mass_log_left, theor_bulge_mass_log_right, size=2)
+    bulge_masses_log = np.random.uniform(theor_bulge_mass_log_left, theor_bulge_mass_log_right, size=size)
     return ((10 ** bulge_masses_log) * 1e11)
     # a = ((10 ** bulge_masses_log) * 1e11) * unit_sunmass
     # print(a, 'bm')
@@ -48,20 +48,3 @@ def calc_smbh_masses(virial_mass):
     # log_smbh_mass = 8.18 + (1.55 * (np.log10(virial_galaxy_mass) - 13.0))
     smbh_mass = 10 ** log_smbh_mass
     return smbh_mass / unit_sunmass
-
-
-
-# def calc_smbh_bulge_masses():
-#     smbh_bulge_mass_tuple = []
-#     smbh_masses_initial1 = np.random.uniform(6.3, 9.85, size=150)
-#     smbh_masses_initial = 10 ** smbh_masses_initial1
-#
-#     for index, smbh_mass in enumerate(smbh_masses_initial):
-#         bulge_masses = calc_bulge_masses(smbh_mass, index)
-#         print([(smbh_mass, bulge_mass) for bulge_mass in bulge_masses])
-#         # smbh_bulge_mass_tuple[index] = [(smbh_mass, bulge_mass) for bulge_mass in bulge_masses]
-#         # smbh_bulge_mass_tuple.append(tuple([smbh_mass, bulge_masses]))
-#
-#
-#     print(smbh_bulge_mass_tuple)
-#     return smbh_bulge_mass_tuple

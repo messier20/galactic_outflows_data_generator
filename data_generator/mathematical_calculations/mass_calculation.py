@@ -88,11 +88,11 @@ def mass_calculation(radius, dot_radius, dotdot_radius, total_mass, virial_radiu
     # deltaphi = 4 * math.pi * (radius ** 2) * (rhohgas + rhobgas) * delta_radius * (
     #         1 + delta_radius / radius + (delta_radius ** 2) / (3. * radius ** 2)) * (phih + phib)
 
-    sigma = math.sqrt(mass_halo * fraction_of_galaxy_in_halo + mass_bulge / 2 / radius)
+    # sigma = math.sqrt(mass_halo * fraction_of_galaxy_in_halo + mass_bulge / 2 / radius)
 
     # print((mass_halo + mass_bulge)* unit_sunmass, ' funk')
 
     return potential_mass_halo + mass_bulge_potential, dot_potential_mass_halo + dot_mass_bulge_potential, \
            gas_mass_halo + mass_bulge_gas, dot_gas_mass_halo + dot_mass_bulge_gas, \
-           dotdot_gas_mass_halo + dotdot_mass_bulge_gas, rhohgas + rhobgas, sigma, phih + phib, \
+           dotdot_gas_mass_halo + dotdot_mass_bulge_gas, rhohgas + rhobgas, phih + phib, \
            phigradh + phigradb, rhohgas2 + rhobgas2, mass_bulge

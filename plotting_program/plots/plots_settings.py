@@ -3,7 +3,7 @@ import os
 from data_generator.configurations.path_version_settings import values_version_folder, version
 
 graphs_path = "./graphs/"
-plots_version_folder = 'v' + str(version) + '.2/'
+plots_version_folder = 'v' + str(version) + '.10/'
 # plots_version_folder = ''
 # plots_version_folder = values_version_folder + '1/'
 try:

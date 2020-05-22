@@ -15,7 +15,8 @@ class DrivingForceIntegrator:
         mg_mp_term = mass_gas * mass_potential + (mass_gas ** 2) / 2.
         mass_term = (dot_mass_gas * mass_potential + mass_gas * dot_mass_potential + mass_gas * dot_mass_gas) / radius
 
-
+        # if index == 73:
+            # print('t')
         if driving_force == DRIVING_FORCE.ENERGY_DRIVING:
             # TODO vienu atveju, kad butu visas sitas vidus ifo, o kitu atveju, tik kad eta drive 0.05,
             # (
@@ -53,6 +54,12 @@ class DrivingForceIntegrator:
             if dot_rt_arr[index] > 0:
                 dot_rt_arr[index] = 0
 
+        # if dot_radius < 0.00000000:
+        #     print('t')
+        #     print(radius_arr[index - 1])
+
+        # if index == 2175:
+        #     print('index ping')
         if dot_radius > artificial_cap:
             radius_arr[index + 1] = radius + dot_radius * dt
         else:
