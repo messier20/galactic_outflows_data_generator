@@ -16,6 +16,7 @@ from data_generator.mathematical_calculations.FadeTypeSwitcher import FadeTypeSw
 from data_generator.mathematical_calculations.mass_calculation import mass_calculation
 
 if __name__ == '__main__':
+
     np.seterr(divide='ignore', invalid='ignore')
     start_time = time.time()
 
@@ -48,12 +49,19 @@ if __name__ == '__main__':
                 itertools.product(init.bulge_disc_gas_fractions, current_smbh_masses, init.quasar_durations,
                                   swch.fade_arr.values(), init.duty_cycles, init.outflow_sphere_angle_ratio)):
 
-            if duty_cycle > 0.11:
+            if duty_cycle < 0.07:
+                subtracted_indices_count = 42
+                dtmax = const.DT_MAX_VERY_SMALL_OUTFLOWS
+            elif duty_cycle < 0.15:
+                subtracted_indices_count = 32
+                dtmax = const.DT_MAX_SMALL_OUTFLOWS
+            elif duty_cycle < 0.26:
+                subtracted_indices_count = 22
+                dtmax = const.DT_MAX_INTERMEDIATE_OUTFLOWS
+            else:
                 subtracted_indices_count = 12
                 dtmax = const.DT_MAX_BIG_OUTFLOWS
-            else:
-                subtracted_indices_count = 30
-                dtmax = const.DT_MAX_SMALL_OUTFLOWS
+
 
             # loop_time = time.time()
             if fade == const.FADE.KING:

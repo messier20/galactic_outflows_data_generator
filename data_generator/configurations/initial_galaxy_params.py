@@ -14,17 +14,27 @@ from data_generator.configurations.constants import RADIATIVE_EFFICIENCY_ETA
 # smbh_masses_initial = np.array([2.4641722e8/unt.unit_sunmass])
 # smbh_masses_initial = np.array([5.2158003e8/unt.unit_sunmass])
 # smbh_masses_initial = smbh_masses_initial/ unt.unit_sunmass
-smbh_masses_initial = []
+# smbh_masses_initial =[]
+# tekme1
+smbh_masses_initial = np.array([3.7469304e7/unt.unit_sunmass])
 
 # bulge_masses_initial = np.array([2.3859397e10])
 # bulge_masses_initial = np.array([1.9936952e11])
-bulge_masses_initial = []
+# tekme1
+bulge_masses_initial = np.array([1.1056635e10])
+# bulge_masses_initial = []
 
 # bulge_disc_gas_fractions = np.linspace(0.2, 0.4, 3)
 # outflow_sphere_angle_ratio = np.linspace(1, 1, 1)
-outflow_sphere_angle_ratio = np.linspace(0.3, 1, 4)
+# tekme1
+outflow_sphere_angle_ratio = np.array([0.3369176])
+
+# outflow_sphere_angle_ratio = np.linspace(0.3, 1, 4)
+
 # bulge_disc_gas_fractions = np.linspace(0.2, 0.4, 2)
-bulge_disc_gas_fractions = np.array([0.01, 0.04, 0.12, 0.25, 0.4])
+# tekme1
+bulge_disc_gas_fractions = np.array([0.06823811])
+# bulge_disc_gas_fractions = np.array([0.01, 0.04, 0.12, 0.25, 0.4])
 # bulge_disc_gas_fractions = np.linspace(0.2, 0.4, 2)
 # predictions
 # bulge_disc_gas_fractions = np.array([0.02091882])
@@ -38,10 +48,12 @@ bulge_disc_gas_fractions = np.array([0.01, 0.04, 0.12, 0.25, 0.4])
 # virial_galaxies_masses1 = np.random.uniform(13, 13, size=1)
 np.random.seed(1)
 # virial_galaxies_masses1 = np.random.uniform(12.8, 14, size=30)
-virial_galaxies_masses1 = np.random.uniform(12.0, 14.0, size=40)
+# tekme1
+virial_galaxies_masses = np.array([4.9432725e+12])
+# virial_galaxies_masses1 = np.random.uniform(12.0, 14.0, size=40)
 
 # virial_galaxies_masses1 = np.random.uniform(12.4, 14.05, size=30)
-virial_galaxies_masses = 10**virial_galaxies_masses1
+# virial_galaxies_masses = 10**virial_galaxies_masses1
 #
 # predictions
 # virial_galaxies_masses = np.array([1.0805586e13 / 8.5979939e12])
@@ -72,7 +84,10 @@ duration_coef_exp_law = math.log(0.01)*drop_timescale
 np.random.seed(4)
 # duty_cycles = np.linspace(0.12, 0.12, 1)
 # duty_cycles = np.linspace(0.1, 0.5, 3)
-duty_cycles = np.linspace(0.04, 0.4, 4)
+
+# tekme1
+duty_cycles = np.array([0.20755565])
+# duty_cycles = np.linspace(0.04, 0.4, 5)
 # duty_cycles = np.linspace(0.05, 0.5, 4)
 # duty_cycles = np.linspace(0.05, 0.5, 7)
 
@@ -86,7 +101,10 @@ duty_cycles = np.linspace(0.04, 0.4, 4)
 # quasar_durations = np.linspace(1e5, 1e5, 1)
 
 # quasar_durations = np.linspace(9.7e3, 1.15e5, 10)
-quasar_durations = np.linspace(9.7e3, 1.1e5, 3)
+
+# tekme1
+quasar_durations = np.array([38015.47])
+# quasar_durations = np.linspace(9.7e3, 1.1e5, 4)
 
 # predictions
 # quasar_durations = np.array([50059.734/ unt.unit_year])

@@ -9,8 +9,10 @@ DT_MIN = 1 / unit_year  # ;1 year
 # DT_MAX = 15000. * DT_MIN  # ;15000 years
 # DT_MAX = 150000. * DT_MIN  # ;15000 years
 # DT_MAX = 80000. * DT_MIN  # ;15000 years
-DT_MAX_SMALL_OUTFLOWS = 30000. * DT_MIN
-DT_MAX_BIG_OUTFLOWS = 100000. * DT_MIN
+DT_MAX_SMALL_OUTFLOWS = 45000. * DT_MIN
+DT_MAX_VERY_SMALL_OUTFLOWS = 15000. * DT_MIN
+DT_MAX_INTERMEDIATE_OUTFLOWS = 85000. * DT_MIN
+DT_MAX_BIG_OUTFLOWS = 120000. * DT_MIN
 
 T_MAX = 1.5e8 / unit_year  # ;time until the end of simulation, in years
 R_MAX = 200. / unit_kpc  # ;stop the simulation once the c.d. reaches this radius_
