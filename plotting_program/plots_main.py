@@ -8,7 +8,7 @@ params_output_name = params_path + values_version_folder
 outflow_props = []
 
 galaxy_props_map = pd.read_csv(params_output_name+'properties_map.csv')
-failed_outflows = pd.read_csv(params_output_name+'failed_outflows.csv')
+# failed_outflows = pd.read_csv(params_output_name+'failed_outflows.csv')
 unique_galaxies = pd.unique(galaxy_props_map['galaxy_mass'])
 failed_unique_galaxies = pd.unique(failed_outflows['galaxy_mass'])
 unique_quasar_durations = pd.unique(galaxy_props_map['quasar_duration'])

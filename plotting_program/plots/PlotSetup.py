@@ -8,10 +8,10 @@ class PlotSetup:
         # ax.tick_params(axis='both', which='both', direction='in', top=True, right=True)
         fig, ax = self.setup_common_properties()
 
-        ax.set_xlim(8e3, 1e8)
+        ax.set_xlim(1e3, 1e8)
         ax.set_yscale('log')
         ax.set_xscale('log')
-        ax.set_xlabel('time [$yr$]', fontsize=14)
+        ax.set_xlabel('Laikas [$yr$]', fontsize=14)
 
         return fig, ax
     def setup_LAGN_rel(self):
@@ -31,6 +31,7 @@ class PlotSetup:
 
         return fig, ax
 
+
     def add_legend_gas_fractions(self, ax, *lines):
         return ax.legend(lines,
                    (r'$f_g$ = 0.05', r'$f_g$ = 0.1', r'$f_g$ = 0.25', r'$f_g$ = 0.5', r'$f_g$ = 1'),
@@ -39,7 +40,7 @@ class PlotSetup:
     def setup_common_properties(self):
         fig, ax = plt.subplots()
         ax.tick_params(axis='both', which='both', direction='in', top=True, right=True, width=1.2, labelsize='large')
-        ax.tick_params(length=7, width=1.5, labelsize=12)
+        ax.tick_params(length=7, width=1.5)
         ax.tick_params(which='minor', length=4.5, width=1.2)
 
         return fig, ax

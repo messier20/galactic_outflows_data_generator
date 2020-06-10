@@ -66,3 +66,4 @@ class PROPERTIES_MAP_COLUMNS(Enum):
     PARAMS_INDEX = 'params_index'
     GALAXY_INDEX = 'galaxy_index'
     OUTFLOW_SPHERE_ANGLE = 'outflow_sphare_angle'
+    NAME = 'name'
