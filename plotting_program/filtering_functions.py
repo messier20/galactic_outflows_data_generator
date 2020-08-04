@@ -55,10 +55,10 @@ def read_outflows(filtered_df, map_df, variable_parameter, outflow_props, labels
     # labels = []
     legend_titles=[]
     for spe, index in enumerate(filtered_df.index):
-        file_name = params_output_name + '_' + str(map_df.params_index.values[index]) + '_' + str(
-                    map_df.variant_loop_index.values[index]) +'.csv'
         # file_name = params_output_name + '_' + str(map_df.params_index.values[index]) + '_' + str(
-        #     map_df.galaxy_index.values[index]) + '.csv'
+        #             map_df.variant_loop_index.values[index]) +'.csv'
+        file_name = params_output_name + '_' + str(map_df.params_index.values[index]) + '_' + str(
+            map_df.galaxy_index.values[index]) + '.csv'
         outflow = pd.read_csv(file_name)
         if colors_flag:
             outflow['color'] = [filtered_df.color[index] for j in range(len(outflow))]
@@ -88,7 +88,10 @@ def read_outflows(filtered_df, map_df, variable_parameter, outflow_props, labels
                 else:
                     if len(column_labels) > 3 and ind ==2:
                         add_val ='\n'
-                    ls += ', '+ add_val + filtered_df.fade_type[index]
+                    if filtered_df.fade_type[index] == 'king':
+                        ls += ', ' + add_val + 'King'
+                    else:
+                        ls += ', '+ add_val + filtered_df.fade_type[index]
                 add_val = ''
 
             labels.append(ls[2:])
@@ -381,10 +384,10 @@ def display_special_outflows(map_df, unique_galaxies):
 
     if display_gal_gas_big:
 
-        generic_radius_relation_plot(outflows, labels, 'king šviesio funkcija', 'gal-mass-gas-big', False, 0, display_special_duty_cycle_range_big[indices],
+        generic_radius_relation_plot(outflows, labels, 'King šviesio funkcija', 'gal-mass-gas-big', False, 0, colors[indices],
                                      True)
-        generic_time_relation_plot(outflows, labels, 'king šviesio funkcija', 'gal-mass-gas-big', False, 0, colors[indices], True)
-        generic_lum_relation(outflows, labels, 'king šviesio funkcija', 'gal-mass-gas-big', False, 0, colors[indices], True)
+        generic_time_relation_plot(outflows, labels, 'King šviesio funkcija', 'gal-mass-gas-big', False, 0, colors[indices], True)
+        generic_lum_relation(outflows, labels, 'King šviesio funkcija', 'gal-mass-gas-big', False, 0, colors[indices], True)
 
     if display_duty_gas:
         generic_radius_relation_plot(outflows, labels, 'king šviesio funkcija', 'duty-gas', False, colors[indices],
@@ -394,11 +397,11 @@ def display_special_outflows(map_df, unique_galaxies):
         generic_lum_relation(outflows, labels, 'king šviesio funkcija', 'duty-gas', False, colors[indices], True)
 
     if display_duty_gas_big:
-        generic_radius_relation_plot(outflows, labels, 'king šviesio funkcija', 'duty-gas-big', False, 0, colors[indices],
+        generic_radius_relation_plot(outflows, labels, 'King šviesio funkcija', 'duty-gas-big', False, 0, colors[indices],
                                      True)
-        generic_time_relation_plot(outflows, labels, 'king šviesio funkcija', 'duty-gas-big', False, 0, colors[indices],
+        generic_time_relation_plot(outflows, labels, 'King šviesio funkcija', 'duty-gas-big', False, 0, colors[indices],
                                    True)
-        generic_lum_relation(outflows, labels, 'king šviesio funkcija', 'duty-gas-big', False, 0, colors[indices], True)
+        generic_lum_relation(outflows, labels, 'King šviesio funkcija', 'duty-gas-big', False, 0, colors[indices], True)
     if display_duty_gas_semi_big:
         generic_radius_relation_plot(outflows, labels, 'king šviesio funkcija', 'duty-gas-semi-big', False, colors[indices],
                                      True)
@@ -436,8 +439,8 @@ def display_special_outflows(map_df, unique_galaxies):
                              True)
 
     if display_gal_gas_big_sub:
-        subfigure_plt(outflows, labels, 'king šviesio funkcija', 'gal-mass-gas-big2', False, 0, colors[indices],
-                                     True)
+        subfigure_plt(outflows, labels, 'King šviesio funkcija', 'gal-mass-gas-big2', False, 0, colors[indices],
+                                     False)
     # generic_lum_relation(outflows, labels, '', 'gal-mass-gas-big2', False, 0, colors[indices],
     #                      True)
     # generic_time_relation_plot(outflows, labels, '', 'galaxy-fade-2', False, 0,

@@ -16,7 +16,7 @@ display_galaxy_and_gas_dependence = False
 display_gas_and_galaxy_dependence = False
 display_angle_dependence = False
 display_fade_type_dependence_for_real_outf = False
-display_smbh_relations = True
+display_smbh_relations = False
 
 display_duty_cycle_quasar = False
 display_characteristic = False
@@ -24,14 +24,14 @@ display_galaxy_quasar = False
 display_galaxy_duty = False
 display_galaxy_gas = False
 display_gal_gas_big = False
-display_gal_gas_big_sub = False
+display_gal_gas_big_sub = True
 
 display_duty_gas = False
 display_duty_gas_big = False
 display_duty_gas_semi_big = False
 display_fades_small = False
 display_predictions = False
-display_specific_outflows = False
+display_specific_outflows = True
 display_duty_cycle_hist = False
 display_quasar_duration_hist = False
 display_outf_angle_hist = False

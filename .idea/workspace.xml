@@ -2,20 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0e66c5af-f6c1-4cf8-9b05-46217e833a18" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/plotting_program/plots/smbh_relations.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/plotting_program/plots/subfigure_plt.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_generator/configurations/constants.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_generator/configurations/constants.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data_generator/configurations/path_version_settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_generator/configurations/path_version_settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_generator/configurations/switches.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_generator/configurations/switches.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_generator/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_generator/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/plotting_program/filtering_functions.py" beforeDir="false" afterPath="$PROJECT_DIR$/plotting_program/filtering_functions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/plots/PlotSetup.py" beforeDir="false" afterPath="$PROJECT_DIR$/plotting_program/plots/PlotSetup.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/plots/generic_lum_relation.py" beforeDir="false" afterPath="$PROJECT_DIR$/plotting_program/plots/generic_lum_relation.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/plots/generic_radius_relation.py" beforeDir="false" afterPath="$PROJECT_DIR$/plotting_program/plots/generic_radius_relation.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/plots/generic_time_relation_plot.py" beforeDir="false" afterPath="$PROJECT_DIR$/plotting_program/plots/generic_time_relation_plot.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/plotting_program/plots/plots_settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/plotting_program/plots/plots_settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plotting_program/plots_main.py" beforeDir="false" afterPath="$PROJECT_DIR$/plotting_program/plots_main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/plotting_program/plots_main2.py" beforeDir="false" afterPath="$PROJECT_DIR$/plotting_program/plots_main2.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/plotting_program/turning_plots_on_off.py" beforeDir="false" afterPath="$PROJECT_DIR$/plotting_program/turning_plots_on_off.py" afterDir="false" />
     </list>
@@ -143,8 +133,8 @@
     <list>
       <item itemvalue="Python.main" />
       <item itemvalue="Python.main_hack" />
-      <item itemvalue="Python.plots_main" />
       <item itemvalue="Python.plots_main2" />
+      <item itemvalue="Python.plots_main" />
     </list>
   </component>
   <component name="ServiceViewManager">
@@ -182,10 +172,6 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="96" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.680@0.0.1280.680" timestamp="1590215161975" />
-    <state x="371" y="88" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1587398293291">
-      <screen x="0" y="0" width="1280" height="680" />
-    </state>
-    <state x="371" y="88" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1280.680@0.0.1280.680" timestamp="1587398293291" />
     <state width="1278" height="133" key="DebuggerActiveHint" timestamp="1590518688396">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -210,42 +196,38 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state width="1281" height="206" key="GridCell.Tab.-1.right/0.0.1280.680@0.0.1280.680" timestamp="1590528330181" />
-    <state width="1281" height="13" key="GridCell.Tab.0.bottom" timestamp="1591250060075">
+    <state width="1281" height="54" key="GridCell.Tab.0.bottom" timestamp="1591804467242">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1281" height="13" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1591250060075" />
-    <state width="1281" height="13" key="GridCell.Tab.0.center" timestamp="1591250060075">
+    <state width="1281" height="54" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1591804467242" />
+    <state width="1281" height="54" key="GridCell.Tab.0.center" timestamp="1591804467241">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1281" height="13" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1591250060075" />
-    <state width="1281" height="13" key="GridCell.Tab.0.left" timestamp="1591250060074">
+    <state width="1281" height="54" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1591804467241" />
+    <state width="1281" height="54" key="GridCell.Tab.0.left" timestamp="1591804467241">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1281" height="13" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1591250060074" />
-    <state width="1281" height="13" key="GridCell.Tab.0.right" timestamp="1591250060075">
+    <state width="1281" height="54" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1591804467241" />
+    <state width="1281" height="54" key="GridCell.Tab.0.right" timestamp="1591804467241">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1281" height="13" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1591250060075" />
-    <state width="1281" height="13" key="GridCell.Tab.1.bottom" timestamp="1591250060076">
+    <state width="1281" height="54" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1591804467241" />
+    <state width="1281" height="202" key="GridCell.Tab.1.bottom" timestamp="1591803680828">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1281" height="13" key="GridCell.Tab.1.bottom/0.0.1280.680@0.0.1280.680" timestamp="1591250060076" />
-    <state width="1281" height="13" key="GridCell.Tab.1.center" timestamp="1591250060075">
+    <state width="1281" height="202" key="GridCell.Tab.1.bottom/0.0.1280.680@0.0.1280.680" timestamp="1591803680828" />
+    <state width="1281" height="202" key="GridCell.Tab.1.center" timestamp="1591803680828">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1281" height="13" key="GridCell.Tab.1.center/0.0.1280.680@0.0.1280.680" timestamp="1591250060075" />
-    <state width="1281" height="13" key="GridCell.Tab.1.left" timestamp="1591250060075">
+    <state width="1281" height="202" key="GridCell.Tab.1.center/0.0.1280.680@0.0.1280.680" timestamp="1591803680828" />
+    <state width="1281" height="202" key="GridCell.Tab.1.left" timestamp="1591803680828">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1281" height="13" key="GridCell.Tab.1.left/0.0.1280.680@0.0.1280.680" timestamp="1591250060075" />
-    <state width="1281" height="13" key="GridCell.Tab.1.right" timestamp="1591250060075">
+    <state width="1281" height="202" key="GridCell.Tab.1.left/0.0.1280.680@0.0.1280.680" timestamp="1591803680828" />
+    <state width="1281" height="202" key="GridCell.Tab.1.right" timestamp="1591803680828">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1281" height="13" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1591250060075" />
-    <state x="142" y="0" key="SettingsEditor" timestamp="1587738264619">
-      <screen x="0" y="0" width="1280" height="680" />
-    </state>
-    <state x="142" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1587738264619" />
+    <state width="1281" height="202" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1591803680828" />
     <state x="362" y="82" width="540" height="524" key="StructurePopup" timestamp="1590240934088">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -258,22 +240,15 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state width="647" height="347" key="XDebugger.FullValuePopup/0.0.1280.680@0.0.1280.680" timestamp="1590602751848" />
-    <state x="337" y="165" key="com.intellij.ide.util.TipDialog" timestamp="1591249575708">
-      <screen x="0" y="0" width="1280" height="680" />
+    <state x="404" y="200" key="com.intellij.ide.util.TipDialog" timestamp="1596552942667">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="337" y="165" key="com.intellij.ide.util.TipDialog/0.0.1280.680@0.0.1280.680" timestamp="1591249575708" />
+    <state x="337" y="165" key="com.intellij.ide.util.TipDialog/0.0.1280.680@0.0.1280.680" timestamp="1591903394674" />
+    <state x="404" y="200" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1596552942667" />
     <state x="209" y="77" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1588525958709">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="209" y="77" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1280.680@0.0.1280.680" timestamp="1588525958709" />
-    <state width="600" height="424" key="javadoc.popup" timestamp="1586500437280">
-      <screen x="0" y="0" width="1280" height="680" />
-    </state>
-    <state width="600" height="424" key="javadoc.popup/0.0.1280.680@0.0.1280.680" timestamp="1586500437280" />
-    <state x="383" y="0" key="refactoring.ChangeSignatureDialog" timestamp="1586519305615">
-      <screen x="0" y="0" width="1280" height="680" />
-    </state>
-    <state x="383" y="0" key="refactoring.ChangeSignatureDialog/0.0.1280.680@0.0.1280.680" timestamp="1586519305615" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -375,12 +350,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/plotting_program/filtering_functions.py</url>
-          <line>103</line>
+          <line>106</line>
           <option name="timeStamp" value="264" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/plotting_program/filtering_functions.py</url>
-          <line>104</line>
+          <line>107</line>
           <option name="timeStamp" value="265" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -400,22 +375,22 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/plotting_program/filtering_functions.py</url>
-          <line>111</line>
+          <line>114</line>
           <option name="timeStamp" value="269" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/plotting_program/filtering_functions.py</url>
-          <line>113</line>
+          <line>116</line>
           <option name="timeStamp" value="275" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/plotting_program/filtering_functions.py</url>
-          <line>115</line>
+          <line>118</line>
           <option name="timeStamp" value="276" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/plotting_program/filtering_functions.py</url>
-          <line>561</line>
+          <line>564</line>
           <option name="timeStamp" value="295" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -470,7 +445,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/plotting_program/filtering_functions.py</url>
-          <line>176</line>
+          <line>179</line>
           <option name="timeStamp" value="366" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -480,12 +455,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/plotting_program/filtering_functions.py</url>
-          <line>181</line>
+          <line>184</line>
           <option name="timeStamp" value="386" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/plotting_program/filtering_functions.py</url>
-          <line>163</line>
+          <line>166</line>
           <option name="timeStamp" value="387" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -510,42 +485,42 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/plotting_program/filtering_functions.py</url>
-          <line>162</line>
+          <line>165</line>
           <option name="timeStamp" value="395" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/plotting_program/filtering_functions.py</url>
-          <line>161</line>
+          <line>164</line>
           <option name="timeStamp" value="396" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/plotting_program/filtering_functions.py</url>
-          <line>148</line>
+          <line>151</line>
           <option name="timeStamp" value="397" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/plotting_program/filtering_functions.py</url>
-          <line>150</line>
+          <line>153</line>
           <option name="timeStamp" value="398" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/plotting_program/filtering_functions.py</url>
-          <line>154</line>
+          <line>157</line>
           <option name="timeStamp" value="399" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/plotting_program/filtering_functions.py</url>
-          <line>153</line>
+          <line>156</line>
           <option name="timeStamp" value="400" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/plotting_program/filtering_functions.py</url>
-          <line>157</line>
+          <line>160</line>
           <option name="timeStamp" value="401" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/plotting_program/filtering_functions.py</url>
-          <line>159</line>
+          <line>162</line>
           <option name="timeStamp" value="402" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -575,7 +550,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/plotting_program/filtering_functions.py</url>
-          <line>358</line>
+          <line>361</line>
           <option name="timeStamp" value="426" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -590,87 +565,77 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/plotting_program/filtering_functions.py</url>
-          <line>362</line>
+          <line>365</line>
           <option name="timeStamp" value="436" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/plotting_program/filtering_functions.py</url>
-          <line>332</line>
+          <line>335</line>
           <option name="timeStamp" value="438" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/plotting_program/filtering_functions.py</url>
-          <line>465</line>
+          <line>468</line>
           <option name="timeStamp" value="465" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/plotting_program/filtering_functions.py</url>
-          <line>459</line>
+          <line>462</line>
           <option name="timeStamp" value="466" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/plotting_program/filtering_functions.py</url>
-          <line>460</line>
+          <line>463</line>
           <option name="timeStamp" value="467" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/plotting_program/filtering_functions.py</url>
-          <line>463</line>
+          <line>466</line>
           <option name="timeStamp" value="468" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/plotting_program/filtering_functions.py</url>
-          <line>464</line>
+          <line>467</line>
           <option name="timeStamp" value="469" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/plotting_program/filtering_functions.py</url>
-          <line>383</line>
+          <line>386</line>
           <option name="timeStamp" value="471" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/plotting_program/filtering_functions.py</url>
-          <line>337</line>
+          <line>340</line>
           <option name="timeStamp" value="477" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/plotting_program/filtering_functions.py</url>
-          <line>418</line>
+          <line>421</line>
           <option name="timeStamp" value="478" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/plotting_program/filtering_functions.py</url>
-          <line>344</line>
+          <line>347</line>
           <option name="timeStamp" value="479" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/plotting_program/filtering_functions.py</url>
-          <line>426</line>
+          <line>429</line>
           <option name="timeStamp" value="480" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/plotting_program/filtering_functions.py</url>
-          <line>343</line>
+          <line>346</line>
           <option name="timeStamp" value="481" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/plotting_program/filtering_functions.py</url>
-          <line>301</line>
+          <line>304</line>
           <option name="timeStamp" value="482" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/plotting_program/filtering_functions.py</url>
-          <line>205</line>
-          <option name="timeStamp" value="484" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/plotting_program/filtering_functions.py</url>
-          <line>204</line>
-          <option name="timeStamp" value="485" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/plotting_program/filtering_functions.py</url>
-          <line>237</line>
+          <line>240</line>
           <option name="timeStamp" value="486" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -680,18 +645,43 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/plotting_program/plots_main2.py</url>
-          <line>115</line>
-          <option name="timeStamp" value="488" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/plotting_program/plots_main2.py</url>
-          <line>116</line>
+          <line>117</line>
           <option name="timeStamp" value="489" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/plotting_program/plots/smbh_relations.py</url>
           <line>14</line>
           <option name="timeStamp" value="490" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/plotting_program/plots_main2.py</url>
+          <line>42</line>
+          <option name="timeStamp" value="491" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/plotting_program/plots_main2.py</url>
+          <line>171</line>
+          <option name="timeStamp" value="492" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/plotting_program/filtering_functions.py</url>
+          <line>319</line>
+          <option name="timeStamp" value="493" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/plotting_program/filtering_functions.py</url>
+          <line>318</line>
+          <option name="timeStamp" value="494" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/plotting_program/filtering_functions.py</url>
+          <line>197</line>
+          <option name="timeStamp" value="495" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/plotting_program/filtering_functions.py</url>
+          <line>315</line>
+          <option name="timeStamp" value="496" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -40,10 +40,11 @@ unique_duty_cycle = pd.unique(props_map[const.PROPERTIES_MAP_COLUMNS.DUTY_CYCLE.
 unique_gas_frac = pd.unique(props_map[const.PROPERTIES_MAP_COLUMNS.BULGE_GAS_FRAC.value])
 unique_angle = pd.unique(props_map[const.PROPERTIES_MAP_COLUMNS.OUTFLOW_SPHERE_ANGLE.value])
 unique_fade_type = pd.unique(props_map[const.PROPERTIES_MAP_COLUMNS.FADE_TYPE.value])
-try :
-    unique_name = pd.unique(props_map[const.PROPERTIES_MAP_COLUMNS.NAME.value])
-except:
-    pass
+# unique_name = pd.unique(props_map[const.PROPERTIES_MAP_COLUMNS.NAME.value])
+# try:
+#     unique_name = pd.unique(props_map[const.PROPERTIES_MAP_COLUMNS.NAME.value])
+# except:
+#     pass
 filtering_criteria_unique_galaxy = {'fade_type': const.FADE.NONE.value,
                                     # const.PROPERTIES_MAP_COLUMNS.OUTFLOW_SPHERE_ANGLE.value: 1,
                                     const.PROPERTIES_MAP_COLUMNS.DUTY_CYCLE.value + 'max': 0.1,
@@ -167,8 +168,8 @@ if display_smbh_relations:
     plt.close()
 
 if display_specific_outflows:
-    # display_special_outflows(props_map, min_max_gal_unique)
-    display_special_outflows(props_map, mtot13_df_unique)
+    display_special_outflows(props_map, min_max_gal_unique)
+    # display_special_outflows(props_map, mtot13_df_unique)
 
 # display_predictions_hists(props_map, unique_galaxies, reduced_predictions)
 
