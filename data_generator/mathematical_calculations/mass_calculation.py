@@ -23,6 +23,7 @@ def mass_calculation(radius, dot_radius, dotdot_radius, total_mass, virial_radiu
     :return: mp, mdp, mg, mdg, mddg, rhogas, sigma, deltaphi, phi, phigrad, rhogas2
     """
 
+    # TODO fix variables names
     halo_scale = virial_radius / halo_concentration_parameter
     radius_scaled = radius / halo_scale
     fraction_of_galaxy_in_halo = 1 - bulge_disc_to_totalmass_fraction
@@ -64,6 +65,7 @@ def mass_calculation(radius, dot_radius, dotdot_radius, total_mass, virial_radiu
         isothermal_profile.calculate_profile(whole_bulge_mass, radius, dot_radius, dotdot_radius, bulge_scale, 10)
 
     # mb bulgo mases dalis nuo centro iki dabartinio r
+    # TODO fix this name
     fraction_of_bulge_mass_within_r = 1 - bulge_disc_gas_fraction
 
     mass_bulge_potential = mass_bulge * fraction_of_bulge_mass_within_r
@@ -89,8 +91,6 @@ def mass_calculation(radius, dot_radius, dotdot_radius, total_mass, virial_radiu
     #         1 + delta_radius / radius + (delta_radius ** 2) / (3. * radius ** 2)) * (phih + phib)
 
     # sigma = math.sqrt(mass_halo * fraction_of_galaxy_in_halo + mass_bulge / 2 / radius)
-
-    # print((mass_halo + mass_bulge)* unit_sunmass, ' funk')
 
     return potential_mass_halo + mass_bulge_potential, dot_potential_mass_halo + dot_mass_bulge_potential, \
            gas_mass_halo + mass_bulge_gas, dot_gas_mass_halo + dot_mass_bulge_gas, \

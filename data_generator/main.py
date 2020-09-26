@@ -20,7 +20,7 @@ all_params_columns = ['radius', 'dot_radius', 'derived_dot_mass', 'mass_out', 'l
                               'duty_cycle', 't_initial_smbh_mass', 'bulge_mass', 'bulge_gas', 'galaxy_mass', \
                               'quasar_duration', 'fade_type', 'outflow_sphare_angle']
 
-
+# TODO think how to restructure this main part
 def main_function(initial_smbh_mass, duty_cycle, fade, quasar_duration, virial_galaxy_mass, virial_radius, bulge_scales,
                   bulge_disc_totalmass_fractions, bulge_disc_gas_fraction, outf_angle, outf_name, db_file_header,
                   failed_outflows_mode_header, df_index, init_bulge_mass, predictions_folder, out_indx, variant_index,
@@ -29,6 +29,8 @@ def main_function(initial_smbh_mass, duty_cycle, fade, quasar_duration, virial_g
         subtracted_indices_count = 42
         dtmax = const.DT_MAX_VERY_SMALL_OUTFLOWS
     else:
+        # TODO change to switch
+        # TODO maybe I can write a function for subtracted_indices_count depending on duty cycle
         if duty_cycle < 0.07:
             subtracted_indices_count = 42
             dtmax = const.DT_MAX_VERY_SMALL_OUTFLOWS
@@ -42,7 +44,9 @@ def main_function(initial_smbh_mass, duty_cycle, fade, quasar_duration, virial_g
             subtracted_indices_count = 12
             dtmax = const.DT_MAX_BIG_OUTFLOWS
 
+    # TODO change to switch
     # loop_time = time.time()
+    # TODO change to function for quasar_dt = (a=1 * quasar_duration - b=0) / duty_cycle
     if fade == const.FADE.KING:
         quasar_dt = (47.328 * quasar_duration) / duty_cycle
     elif fade == const.FADE.POWER_LAW:
@@ -77,10 +81,10 @@ def main_function(initial_smbh_mass, duty_cycle, fade, quasar_duration, virial_g
                                                            init.bulge_to_total_mass)
         mass_out_arr[index] = mass_gas
         total_mass_arr[index] = mass_gas + mass_potential
-        # print(total_mass_arr[index]*unit_sunmass)
         dot_mass_arr[index] = dot_mass_gas
         bulge_mass_arr[index] = mass_bulge
 
+        # TODO change to one function
         dot_t1 = (radius_arr[index] + 1.e-8) / (dot_radius_arr[index] + 1.e-8)
         dot_t2 = (dot_radius_arr[index] + 1.e-8) / (dotdot_radius_arr[index] + 1.e-8)
         dot_t3 = (dotdot_radius_arr[index] + 1.e-8) / (dotdotdot_radius_arr[index] + 1.e-8)
@@ -117,7 +121,7 @@ def main_function(initial_smbh_mass, duty_cycle, fade, quasar_duration, virial_g
 
         if swch.smbh_grows:
             smbh_mass_arr[index + 1] = smbh_mass_arr[index] * math.exp(luminosity_coef * dt / init.salpeter_timescale)
-        # TODO change implementation without passing arrays
+        # TODO change implementation without passing arrays or without passing separate array elements
         (radius_arr, dot_radius_arr, dotdot_radius_arr, dotdotdot_radius_arr) = \
             Integrator.driving_force_calc(swch.driving_force, mass_gas, radius_arr[index], const.ETA_DRIVE,
                                           swch.integration_method, luminosity, dot_mass_gas,
@@ -128,12 +132,10 @@ def main_function(initial_smbh_mass, duty_cycle, fade, quasar_duration, virial_g
                                           dot_radius_arr, dotdot_radius_arr, index, dt)
 
         if radius_arr[index + 1] < 0.00000000000000:
-            print('ups')
+            print('ups, calc failed')
             failed_calc = True
             is_main_loop = False
 
-        # if index == 17390:
-        #     print('ping')
         index += 1
         if index >= len(radius_arr) - 1:
             # print(' timesteps')
@@ -150,6 +152,7 @@ def main_function(initial_smbh_mass, duty_cycle, fade, quasar_duration, virial_g
     radius_arr = radius_arr * unt.unit_kpc
     dot_radius_arr = dot_radius_arr * unt.unit_velocity / 1.e5
     time_arr = time_arr * unt.unit_year
+    # TODO pressure might be calculated incorrectly, needs to be checked
     # pressure_contact_arr = pressure_contact_arr / unit_length / (unit_time ** 2)
     # pressure_outer_arr = pressure_outer_arr / unit_length / (unit_time ** 2)
     mv = (mass_out_arr * unt.unit_sunmass) * outf_angle * dot_radius_arr * 1.02269032e-9
@@ -226,6 +229,7 @@ def main_function(initial_smbh_mass, duty_cycle, fade, quasar_duration, virial_g
         # subtracted_indices = subtracted_indices[::13]
         # subtracted_indices = subtracted_indices[::8]
 
+        # TODO move to function?
         temp_initial_smbh_mass = [w_initial_smbh_mass for i in range(len(subtracted_indices))]
         temp_bulge_masses = [init_bulge_mass for i in range(len(subtracted_indices))]
         temp_bulge_disc_gas_fraction = [bulge_disc_gas_fraction for i in range(len(subtracted_indices))]
@@ -329,23 +333,23 @@ if __name__ == '__main__':
                                   out_indx, fade_ind, virial_mass, smbh_m, bulge_mas)
             fade_ind = fade_ind + 1
 
-print('passed time', time.time() - start_time)
+    print('passed time', time.time() - start_time)
 
-plt.xlabel('mbulge')
-plt.ylabel('smbh_m')
-plt.xscale('log')
-plt.yscale('log')
-plt.xlim(1e8, 1e14)
-plt.ylim(3e5, 5e11)
-plt.scatter(bulge_mas, smbh_m)
-plt.savefig('bulge-smbh' + str(version) + '.png')
-plt.close()
+    plt.xlabel('mbulge')
+    plt.ylabel('smbh_m')
+    plt.xscale('log')
+    plt.yscale('log')
+    plt.xlim(1e8, 1e14)
+    plt.ylim(3e5, 5e11)
+    plt.scatter(bulge_mas, smbh_m)
+    plt.savefig(params_path + 'graphs/bulge-smbh' + str(version) + '.png')
+    plt.close()
 
-plt.xlabel('mtot')
-plt.ylabel('smbh_m')
-plt.xscale('log')
-plt.yscale('log')
-plt.xlim(3e11, 1e15)
-plt.ylim(3e6, 5e11)
-plt.scatter(virial_mass, smbh_m, s=1)
-plt.savefig('smbh-mtot' + str(version) + '.png')
+    plt.xlabel('mtot')
+    plt.ylabel('smbh_m')
+    plt.xscale('log')
+    plt.yscale('log')
+    plt.xlim(3e11, 1e15)
+    plt.ylim(3e6, 5e11)
+    plt.scatter(virial_mass, smbh_m, s=1)
+    plt.savefig(params_path + 'graphs/smbh-mtot' + str(version) + '.png')

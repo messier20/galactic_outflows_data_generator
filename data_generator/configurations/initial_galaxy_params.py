@@ -5,6 +5,8 @@ import numpy as np
 import data_generator.configurations.units as unt
 from data_generator.configurations.constants import RADIATIVE_EFFICIENCY_ETA
 
+# TODO maybe these should be red from file?
+
 # np.random.seed(7)
 # smbh_masses_initial1 = np.random.uniform(6.3, 9.85, size=150)
 # smbh_masses_initial1 = np.random.uniform(7.95, 8.1, size=5)

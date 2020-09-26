@@ -54,12 +54,6 @@ class DrivingForceIntegrator:
             if dot_rt_arr[index] > 0:
                 dot_rt_arr[index] = 0
 
-        # if dot_radius < 0.00000000:
-        #     print('t')
-        #     print(radius_arr[index - 1])
-
-        # if index == 2175:
-        #     print('index ping')
         if dot_radius > artificial_cap:
             radius_arr[index + 1] = radius + dot_radius * dt
         else:
@@ -81,7 +75,7 @@ class DrivingForceIntegrator:
 
     def dot_rt_initial_calc(self, mg, radius, eta_drive, luminosity, mdg, dot_radius,
                             dotdot_radius, mg_mp_term, mass_term, mddg):
-        # TODO figure which ones of these have physical meaning
+        # TODO figure which ones of these have physical meaning and change calculation equation
         mg_r = mg * radius
         mdg_rd_squared = mdg * (dot_radius ** 2)
         rd_r_squared = dot_radius / (radius ** 2)
