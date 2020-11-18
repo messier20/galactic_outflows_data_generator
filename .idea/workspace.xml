@@ -2,119 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0e66c5af-f6c1-4cf8-9b05-46217e833a18" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/README.MD" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_generator/bulge-smbh.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_generator/bulge-smbh1.0_predictions.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_generator/bulge-smbh1.15_predictions.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_generator/bulge-smbh1.1_predictions.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_generator/bulge-smbh10.2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_generator/bulge-smbh10.3_predictions_1.1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_generator/bulge-smbh10.5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_generator/bulge-smbh10.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_generator/bulge-smbh11.110_predictions.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_generator/bulge-smbh11.115_predictions.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_generator/bulge-smbh11.120_predictions.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_generator/bulge-smbh11.125_predictions.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_generator/bulge-smbh11.12_predictions.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_generator/bulge-smbh11.130_predictions.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_generator/bulge-smbh11.135_predictions.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_generator/bulge-smbh11.140_predictions.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_generator/bulge-smbh11.145_predictions.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_generator/bulge-smbh11.150_predictions.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_generator/bulge-smbh11.155_predictions.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_generator/bulge-smbh11.160_predictions.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_generator/bulge-smbh11.170_predictions.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_generator/bulge-smbh11.175_predictions.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_generator/bulge-smbh11.180_predictions.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_generator/bulge-smbh11.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_generator/bulge-smbh12.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_generator/bulge-smbh2.15_predictions.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_generator/bulge-smbh2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_generator/bulge-smbh3.15_predictions.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_generator/bulge-smbh3.2_predictions.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_generator/bulge-smbh3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_generator/bulge-smbh4.15_predictions.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_generator/bulge-smbh4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_generator/bulge-smbh5.15_predictions.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_generator/bulge-smbh5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_generator/bulge-smbh6.15_predictions.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_generator/bulge-smbh6.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_generator/bulge-smbh7.15_predictions.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_generator/bulge-smbh7.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_generator/bulge-smbh8.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_generator/bulge-smbh9.0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_generator/configurations/initial_galaxy_params.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_generator/configurations/initial_galaxy_params.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_generator/configurations/path_version_settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_generator/configurations/path_version_settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_generator/configurations/switches.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_generator/configurations/switches.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_generator/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_generator/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_generator/mathematical_calculations/DrivingForceIntegrator.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_generator/mathematical_calculations/DrivingForceIntegrator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_generator/mathematical_calculations/mass_calculation.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_generator/mathematical_calculations/mass_calculation.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_generator/seed+1_seedn3_nonlog_alpha9-12_50_5full_wide.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_generator/seed+1_seedn3_nonlog_alpha9-12_60_5full_wide.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_generator/seed+1_seedn3_nonlog_alpha9-12_70_4full_wide.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_generator/seed+1_seedn7_nonlog_alpha9-12_50_7full_wide.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_generator/seed+1_seedn7_nonlog_alpha9-12_55_5full_wide.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_generator/seed+1_seedn7_nonlog_alpha9-12_55_7full_wide.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_generator/seed+1_seedn7_nonlog_alpha9-12_60_5full_wide.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_generator/seed+2_seedn3_nonlog_alpha9-12_50_5full_wide.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_generator/seed+2_seedn3_nonlog_alpha9-12_55_5full_wide.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_generator/seed+2_seedn7_nonlog_alpha9-12_55_5full_wide.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_generator/seed+3_seedn3_nonlog_alpha9-12_120_1full_wide.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_generator/seed+3_seedn3_nonlog_alpha9-12_120_2full_wide.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_generator/seed+3_seedn3_nonlog_alpha9-12_60_5full_wide.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_generator/seed+3_seedn3_nonlog_alpha9-12_70_4full_wide.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_generator/seed+3_seedn3_nonlog_alpha9-12_90_2full_wide.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_generator/seed+3_seedn7_nonlog_alpha9-06_200_1full_wide.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_generator/seed+3_seedn7_nonlog_alpha9-06_250_1full_wide.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_generator/seed+3_seedn7_nonlog_alpha9-06_260_1full_wide.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_generator/seed+3_seedn7_nonlog_alpha9-06_280_1full_wide.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_generator/seed+3_seedn7_nonlog_alpha9-0š_200_1full_wide.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_generator/seed+3_seedn7_nonlog_alpha9-12_150_2full_wide.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_generator/seed+3_seedn7_nonlog_alpha9-12_180_2full_wide.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_generator/seed+3_seedn7_nonlog_alpha9-12_200_1full_wide.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_generator/seed_seedn7_nonlog_alpha9-12_50_7full_wide.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_generator/seed_seedn7_nonlog_alpha9-12_55_5full_wide.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_generator/seed_seedn7_nonlog_alpha9-12_55_7full_wide.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_generator/smbh-mtot.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_generator/smbh-mtot1.0_predictions.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_generator/smbh-mtot1.15_predictions.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_generator/smbh-mtot1.1_predictions.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_generator/smbh-mtot10.2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_generator/smbh-mtot10.3_predictions_1.1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_generator/smbh-mtot10.5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_generator/smbh-mtot10.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_generator/smbh-mtot11.110_predictions.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_generator/smbh-mtot11.115_predictions.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_generator/smbh-mtot11.120_predictions.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_generator/smbh-mtot11.125_predictions.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_generator/smbh-mtot11.12_predictions.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_generator/smbh-mtot11.130_predictions.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_generator/smbh-mtot11.135_predictions.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_generator/smbh-mtot11.140_predictions.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_generator/smbh-mtot11.145_predictions.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_generator/smbh-mtot11.150_predictions.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_generator/smbh-mtot11.155_predictions.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_generator/smbh-mtot11.160_predictions.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_generator/smbh-mtot11.170_predictions.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_generator/smbh-mtot11.175_predictions.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_generator/smbh-mtot11.180_predictions.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_generator/smbh-mtot11.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_generator/smbh-mtot12.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_generator/smbh-mtot2.15_predictions.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_generator/smbh-mtot2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_generator/smbh-mtot3.15_predictions.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_generator/smbh-mtot3.2_predictions.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_generator/smbh-mtot3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_generator/smbh-mtot4.15_predictions.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_generator/smbh-mtot4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_generator/smbh-mtot5.15_predictions.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_generator/smbh-mtot5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_generator/smbh-mtot6.15_predictions.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_generator/smbh-mtot6.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_generator/smbh-mtot7.15_predictions.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_generator/smbh-mtot7.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_generator/smbh-mtot8.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_generator/smbh-mtot9.0.png" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -275,30 +164,22 @@
     </ignored-roots>
   </component>
   <component name="WindowStateProjectService">
-    <state width="1537" height="214" key="GridCell.Tab.0.bottom" timestamp="1596555125317">
+    <state x="490" y="154" width="540" height="524" key="StructurePopup" timestamp="1605716379673">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1537" height="214" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1596555125317" />
-    <state width="1537" height="214" key="GridCell.Tab.0.center" timestamp="1596555125317">
+    <state x="490" y="154" width="540" height="524" key="StructurePopup/0.0.1536.824@0.0.1536.824" timestamp="1605716379673" />
+    <state x="404" y="200" key="com.intellij.ide.util.TipDialog" timestamp="1605711930756">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1537" height="214" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1596555125317" />
-    <state width="1537" height="214" key="GridCell.Tab.0.left" timestamp="1596555125317">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1537" height="214" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1596555125317" />
-    <state width="1537" height="214" key="GridCell.Tab.0.right" timestamp="1596555125317">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1537" height="214" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1596555125317" />
-    <state x="404" y="200" key="com.intellij.ide.util.TipDialog" timestamp="1601098385383">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="404" y="200" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1601098385383" />
+    <state x="404" y="200" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1605711930756" />
     <state x="578" y="330" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1601099369092">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="578" y="330" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1601099369092" />
+    <state x="462" y="10" width="611" height="804" key="find.popup" timestamp="1605713112857">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="462" y="10" width="611" height="804" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1605713112857" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
