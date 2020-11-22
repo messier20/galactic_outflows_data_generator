@@ -1,4 +1,4 @@
-import data_generator.configurations.constants as const
+import configurations.constants as const
 
 repeating_equation = True
 smbh_grows = True

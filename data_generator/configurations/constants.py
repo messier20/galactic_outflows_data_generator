@@ -1,4 +1,4 @@
-from data_generator.configurations.units import unit_year, unit_kpc
+from configurations.units import unit_year, unit_kpc
 from enum import Enum
 
 

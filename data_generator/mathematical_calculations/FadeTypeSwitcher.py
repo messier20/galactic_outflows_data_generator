@@ -1,6 +1,6 @@
 import math
 
-import data_generator.configurations.initial_galaxy_params as init
+import configurations.initial_galaxy_params as init
 
 
 class FadeTypeSwitcher:

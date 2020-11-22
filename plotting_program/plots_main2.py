@@ -1,11 +1,11 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 
-from data_generator.configurations.physical_values import intercept_alpha, slope_beta, bulge_normalization_mass
+from configurations.physical_values import intercept_alpha, slope_beta, bulge_normalization_mass
 from plotting_program.plots.PlotSetup import PlotSetup
 import numpy as np
-import data_generator.configurations.constants as const
-from data_generator.configurations.path_version_settings import params_path, values_version_folder, predictions_file, \
+import configurations.constants as const
+from configurations.path_version_settings import params_path, values_version_folder, predictions_file, \
     version
 from plotting_program.plots import smbh_relations
 from plotting_program.filtering_functions import \

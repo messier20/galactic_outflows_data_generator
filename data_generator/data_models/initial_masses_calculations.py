@@ -1,7 +1,7 @@
 import numpy as np
 
-from data_generator.configurations.physical_values import intercept_alpha, slope_beta, bulge_normalization_mass
-from data_generator.configurations.units import unit_sunmass
+from configurations.physical_values import intercept_alpha, slope_beta, bulge_normalization_mass
+from configurations.units import unit_sunmass
 
 
 def calc_bulge_masses(smbh_mass, index, size, alpha=intercept_alpha, beta=slope_beta, norm_mass=bulge_normalization_mass):
