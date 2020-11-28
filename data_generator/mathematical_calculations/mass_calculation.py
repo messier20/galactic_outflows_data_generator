@@ -1,7 +1,7 @@
 import math
-from data_generator.configurations.units import unit_sunmass
-from data_generator.mathematical_calculations.IsothermalProfile import IsothermalProfile
-from data_generator.mathematical_calculations.NFWProfile import NFW
+from configurations.units import unit_sunmass
+from mathematical_calculations.IsothermalProfile import IsothermalProfile
+from mathematical_calculations.NFWProfile import NFW
 
 
 def mass_calculation(radius, dot_radius, dotdot_radius, total_mass, virial_radius,

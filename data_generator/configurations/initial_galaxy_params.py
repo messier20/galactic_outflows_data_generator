@@ -2,8 +2,8 @@ import math
 
 import numpy as np
 
-import data_generator.configurations.units as unt
-from data_generator.configurations.constants import RADIATIVE_EFFICIENCY_ETA
+import configurations.units as unt
+from configurations.constants import RADIATIVE_EFFICIENCY_ETA
 
 # TODO maybe these should be red from file?
 

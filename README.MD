@@ -1,1 +1,0 @@
-Change params_path in /configurations/path_version_settings

@@ -1,6 +1,6 @@
 import pandas as pd
 
-from data_generator.configurations.path_version_settings import params_path, values_version_folder
+from configurations.path_version_settings import params_path, values_version_folder
 from plotting_program.plots.generic_time_relation_plot import generic_time_relation_plot
 from plotting_program.plots.generic_radius_relation import generic_radius_relation_plot
 
