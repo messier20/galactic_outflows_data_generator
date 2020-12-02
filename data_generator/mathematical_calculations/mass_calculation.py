@@ -8,18 +8,19 @@ def mass_calculation(radius, dot_radius, dotdot_radius, total_mass, virial_radiu
                      halo_concentration_parameter, bulge_scale,
                      bulge_disc_to_totalmass_fraction, halo_gas_fraction, bulge_disc_gas_fraction, bulge_totalmass):
     """
+    Calculates various mass within radius (how far the outflow has gotten up to this time point)
 
     :param radius:
     :param dot_radius:
     :param dotdot_radius:
-    :param total_mass:
-    :param virial_radius:
-    :param halo_concentration_parameter:
-    :param bulge_scale:
-    :param bulge_disc_to_totalmass_fraction:
-    :param halo_gas_fraction:
-    :param bulge_disc_gas_fraction:
-    :param bulge_totalmass:
+    :param total_mass: (virial_galaxy_mass) CONSTANT FOR ONE SIMULATION
+    :param virial_radius: CONSTANT FOR ONE SIMULATION
+    :param halo_concentration_parameter: CONSTANT FOR ONE SIMULATION
+    :param bulge_scale: CONSTANT FOR ONE SIMULATION
+    :param bulge_disc_to_totalmass_fraction: CONSTANT FOR ONE SIMULATION
+    :param halo_gas_fraction: CONSTANT FOR ONE SIMULATION
+    :param bulge_disc_gas_fraction: CONSTANT FOR ONE SIMULATION
+    :param bulge_totalmass: CONSTANT FOR ONE SIMULATION
     :return: mp, mdp, mg, mdg, mddg, rhogas, sigma, deltaphi, phi, phigrad, rhogas2
     """
 
@@ -57,10 +58,12 @@ def mass_calculation(radius, dot_radius, dotdot_radius, total_mass, virial_radiu
     rhohgas = rho_halo * fraction_of_galaxy_in_halo * halo_gas_fraction
     rhohgas2 = rho2_halo * fraction_of_galaxy_in_halo * halo_gas_fraction
 
+    # ???
     whole_bulge_mass = bulge_totalmass * bulge_disc_to_totalmass_fraction * total_mass
     # bulge_scaled = radius / bulge_scale
 
     isothermal_profile = IsothermalProfile()
+    # Calculate mass and density within radius, from total mass
     (mass_bulge, dot_mass_bulge, dotdot_mass_bulge, rho_bulge, rho2_bulge, phi_bulge, phi_grad_bulge) = \
         isothermal_profile.calculate_profile(whole_bulge_mass, radius, dot_radius, dotdot_radius, bulge_scale, 10)
 

@@ -18,23 +18,31 @@ from configurations.constants import RADIATIVE_EFFICIENCY_ETA
 # smbh_masses_initial = smbh_masses_initial/ unt.unit_sunmass
 # smbh_masses_initial =[]
 # tekme1
+
+# Total SMBH mass (no dark matter) MOST LIKELY UNUSED, IT'S CALCULATED FROM VIRIAL MASS IN MAIN.PY
 smbh_masses_initial = np.array([3.7469304e7/unt.unit_sunmass])
 
 # bulge_masses_initial = np.array([2.3859397e10])
 # bulge_masses_initial = np.array([1.9936952e11])
 # tekme1
+
+# Total bulge mass (including SMBH? no dark matter) MOST LIKELY UNUSED, IT'S CALCULATED FROM SMBH MASS IN MAIN.PY
 bulge_masses_initial = np.array([1.1056635e10])
 # bulge_masses_initial = []
 
 # bulge_disc_gas_fractions = np.linspace(0.2, 0.4, 3)
 # outflow_sphere_angle_ratio = np.linspace(1, 1, 1)
 # tekme1
+
+# Ratio of outflow as a fraction of a full "sphere"
 outflow_sphere_angle_ratio = np.array([0.3369176])
 
 # outflow_sphere_angle_ratio = np.linspace(0.3, 1, 4)
 
 # bulge_disc_gas_fractions = np.linspace(0.2, 0.4, 2)
 # tekme1
+
+# Bulge/ALL gas fraction
 bulge_disc_gas_fractions = np.array([0.06823811])
 # bulge_disc_gas_fractions = np.array([0.01, 0.04, 0.12, 0.25, 0.4])
 # bulge_disc_gas_fractions = np.linspace(0.2, 0.4, 2)
@@ -51,6 +59,8 @@ bulge_disc_gas_fractions = np.array([0.06823811])
 np.random.seed(1)
 # virial_galaxies_masses1 = np.random.uniform(12.8, 14, size=30)
 # tekme1
+
+# Total galaxy mass (with dark matter)
 virial_galaxies_masses = np.array([4.9432725e+12])
 # virial_galaxies_masses1 = np.random.uniform(12.0, 14.0, size=40)
 
@@ -65,18 +75,23 @@ virial_galaxies_masses = np.array([4.9432725e+12])
 virial_galaxies_masses = virial_galaxies_masses / unt.unit_sunmass
 # virial_galaxies_masses = [1.e13 / unt.unit_sunmass]
 
-
+# ¯\_(ツ)_/¯
 halo_concentration_parameter = 10
 
-halo_gas_fraction = 1.e-3  # gas fraction in the halo
+# Gas fraction in the halo
+halo_gas_fraction = 1.e-3
 # TODO probably this one to change from elliptical to different type galaxy
-# bulge_totalmasses = [1 for i in range(0, ITERATIONS_NUM)]  # bulge-to-total mass ratio
+# bulge_totalmasses = [1 for i in range(0, ITERATIONS_NUM)]  
+# Bulge-to-total mass ratio
 bulge_to_total_mass = 1
 
-
+# Eddington ratio - google it
 eddingtion_ratio = 1.
+# Integration parameters (both of them):
 drop_timescale = 3.e5 / unt.unit_year
 alpha_drop = 0.5
+
+# Parametras iš šviesio funkcijų
 duration_coef_exp_law = math.log(0.01)*drop_timescale
 
 # quasar_dt = 1.e6 / unt.unit_year #time between successive quasar phases
@@ -88,6 +103,8 @@ np.random.seed(4)
 # duty_cycles = np.linspace(0.1, 0.5, 3)
 
 # tekme1
+# Decides length of pauses between Quasar activity periods (see quasar_durations),
+# approximately - fraction of time that Quasars are active
 duty_cycles = np.array([0.20755565])
 # duty_cycles = np.linspace(0.04, 0.4, 5)
 # duty_cycles = np.linspace(0.05, 0.5, 4)
@@ -105,6 +122,7 @@ duty_cycles = np.array([0.20755565])
 # quasar_durations = np.linspace(9.7e3, 1.15e5, 10)
 
 # tekme1
+# Duration of one Quasar activity period (in years)
 quasar_durations = np.array([38015.47])
 # quasar_durations = np.linspace(9.7e3, 1.1e5, 4)
 
@@ -115,7 +133,8 @@ quasar_durations = np.array([38015.47])
 quasar_durations = quasar_durations / unt.unit_year
 # print(quasar_durations)
 # quasar_durations = [quasar_duration for i in range(0, ITERATIONS_NUM)]  # ;quasar duration
-salpeter_timescale = 4.5e8 * RADIATIVE_EFFICIENCY_ETA / unt.unit_year  #;SMBH growth timescale at Eddington rate - Salpeter timescale
+# SMBH growth timescale at Eddington rate - Salpeter timescale
+salpeter_timescale = 4.5e8 * RADIATIVE_EFFICIENCY_ETA / unt.unit_year  
 
 # duty_cycle = 0.1
 # TODO add variation of quasar_dts

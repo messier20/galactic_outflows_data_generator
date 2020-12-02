@@ -25,12 +25,21 @@ def main_function(initial_smbh_mass, duty_cycle, fade, quasar_duration, virial_g
                   bulge_disc_totalmass_fractions, bulge_disc_gas_fraction, outf_angle, outf_name, db_file_header,
                   failed_outflows_mode_header, df_index, init_bulge_mass, predictions_folder, out_indx, variant_index,
                   virial_mass=[], smbh_m=[], bulge_mas=[]):
+    '''
+        outf_name: name used for mapping outflows later (NN code?)
+        db_file_header: On first iteration forces 'w' mode on files, later turns on 'a'
+        failed_outflows_mode_header: When outflow calculations fail this gets set to True, afterwards outputs are written to a separate file
+        df_index: pandas table index, increments by 1 each iteration, makes tables behave >:(
+        out_indx: current galaxy (parameter set) index, used for file naming when outputting - first number in file name
+        variant_index: outer loop index (so either mass or fade type) - second number in file name
+    '''
     if swch.testing_phase:
         subtracted_indices_count = 42
         dtmax = const.DT_MAX_VERY_SMALL_OUTFLOWS
     else:
         # TODO change to switch
         # TODO maybe I can write a function for subtracted_indices_count depending on duty cycle
+        # If Quasars are active longers - increas upper bound of time step, because we won't be missing much
         if duty_cycle < 0.07:
             subtracted_indices_count = 42
             dtmax = const.DT_MAX_VERY_SMALL_OUTFLOWS
@@ -47,6 +56,7 @@ def main_function(initial_smbh_mass, duty_cycle, fade, quasar_duration, virial_g
     # TODO change to switch
     # loop_time = time.time()
     # TODO change to function for quasar_dt = (a=1 * quasar_duration - b=0) / duty_cycle
+    # quasar_dt = time in years between Quasar activity periods
     if fade == const.FADE.KING:
         quasar_dt = (47.328 * quasar_duration) / duty_cycle
     elif fade == const.FADE.POWER_LAW:
@@ -69,29 +79,48 @@ def main_function(initial_smbh_mass, duty_cycle, fade, quasar_duration, virial_g
     index = 0
     while is_main_loop:
         failed_calc = False
+        # mass_potential is ALL mass (dark matter, stars, SMBH) without gas (WITHIN CURRENT RADIUS)
+        # mass_gas is ONLY gas mass (WITHIN CURRENT RADIUS)
+        # rho_gas is gas density
+        # phi potential
+        # mass_bulge is bulge mass (WITHIN CURRENT RADIUS)
         (mass_potential, dot_mass_potential, mass_gas, dot_mass_gas, dotdot_mass_gas, rho_gas, phi,
          phigrad, rhog_as2, mass_bulge) = mass_calculation(radius_arr[index],
                                                            dot_radius_arr[index],
                                                            dotdot_radius_arr[index],
                                                            virial_galaxy_mass,
-                                                           virial_radius, init.halo_concentration_parameter,
+                                                           virial_radius,
+                                                           init.halo_concentration_parameter,
                                                            bulge_scales,
                                                            bulge_disc_totalmass_fractions,
                                                            init.halo_gas_fraction, bulge_disc_gas_fraction,
                                                            init.bulge_to_total_mass)
+
+        '''
+        1. Calculate mass within radius
+        2. Out of that calculate time step
+        3. Calculate radius (?)
+        '''
+        # mass_out - the mass of the outflow (it's only gas, duh)
         mass_out_arr[index] = mass_gas
+        # reminder: mass_potential is mass of everything except gas
         total_mass_arr[index] = mass_gas + mass_potential
+        # Amount of mass per unit of time
         dot_mass_arr[index] = dot_mass_gas
         bulge_mass_arr[index] = mass_bulge
 
         # TODO change to one function
+        # radius / speed -> time
         dot_t1 = (radius_arr[index] + 1.e-8) / (dot_radius_arr[index] + 1.e-8)
+        # greitis / pagreitis -> time what is time?
         dot_t2 = (dot_radius_arr[index] + 1.e-8) / (dotdot_radius_arr[index] + 1.e-8)
         dot_t3 = (dotdot_radius_arr[index] + 1.e-8) / (dotdotdot_radius_arr[index] + 1.e-8)
 
         if index > 0:
+            # Most conservative time step size
             dt = 0.1 * min(abs(dot_t1), abs(dot_t2), abs(dot_t3))
 
+            # If we're jumping over a quasar inactivity period, make time step lower to start at some inactivity period or something idunno
             if ((time_arr[index] + dt) // quasar_dt) > (time_arr[index] // quasar_dt):
                 dt = quasar_dt * ((time_arr[index] + dt) // quasar_dt) - time_arr[index]
 
@@ -101,7 +130,7 @@ def main_function(initial_smbh_mass, duty_cycle, fade, quasar_duration, virial_g
                 dt = const.DT_MIN
         else:
             dt = const.DT_MIN
-
+        # Note: dt is just a time step
         dot_time_arr[index + 1] = dt
         time_arr[index + 1] = time_arr[index] + dt
 
@@ -110,8 +139,11 @@ def main_function(initial_smbh_mass, duty_cycle, fade, quasar_duration, virial_g
         else:
             time_eff = time_arr[index]
 
+        # How much luminosity gets reduced, mainly decided by time
         luminosity_coef = FadeTypeSwitcher.calc_luminosity_coef(fade, time_eff, quasar_duration,
                                                                 init.eddingtion_ratio)
+
+        # How much luminosity does the SMBH produce in total                                                        
         luminosity_edd = 1.3e38 * (
                 smbh_mass_arr[
                     index] * unt.unit_mass / 1.989e33) * unt.unit_time / unt.unit_energy  # ;eddington luminosity for the current SMBH mass
@@ -119,9 +151,11 @@ def main_function(initial_smbh_mass, duty_cycle, fade, quasar_duration, virial_g
         luminosity = luminosity_coef * luminosity_edd
         luminosity_AGN_arr[index + 1] = luminosity  # ;actual luminosity
 
+        # SMBH increases in mass
         if swch.smbh_grows:
             smbh_mass_arr[index + 1] = smbh_mass_arr[index] * math.exp(luminosity_coef * dt / init.salpeter_timescale)
         # TODO change implementation without passing arrays or without passing separate array elements
+        # Calculates next radius and its derivatives from various current parameters
         (radius_arr, dot_radius_arr, dotdot_radius_arr, dotdotdot_radius_arr) = \
             Integrator.driving_force_calc(swch.driving_force, mass_gas, radius_arr[index], const.ETA_DRIVE,
                                           swch.integration_method, luminosity, dot_mass_gas,
@@ -286,11 +320,16 @@ if __name__ == '__main__':
     if not swch.testing_phase:
 
         for gal_index, virial_galaxy_mass in enumerate(init.virial_galaxies_masses):
+            # Derived from mass v
             virial_radius = (626 * (((virial_galaxy_mass / (10 ** 13)) * unt.unit_sunmass) ** (1 / 3))) / unt.unit_kpc
 
+            # Calculate SMBH mass from total galaxy mass (including dark matter)
             current_smbh_masses = calc_smbh_masses(virial_galaxy_mass)
+            # Calculate bulge mass from SMBH mass
             bulge_masses = calc_bulge_masses(current_smbh_masses, gal_index, size=1)
+            # Fraction of bulge vs ALL mass
             bulge_disc_totalmass_fractions = bulge_masses / (virial_galaxy_mass * unt.unit_sunmass)
+            # Mass normalization factor for integration (?)
             bulge_scales = [((bulge_mass / 1.e11) ** 0.88) * 2.4 * 2 / unt.unit_kpc for bulge_mass in bulge_masses]
 
             for out_indx, (bulge_disc_gas_fraction, initial_smbh_mass, quasar_duration, fade, duty_cycle, outf_angle) \
