@@ -16,7 +16,7 @@ class InitialGalaxyParameters:
     # Amount of outflow as a fraction of a full "sphere"
     outflow_sphere_angle_ratio: float = 0.3369176
 
-    # ¯\_(ツ)_/¯
+    # A property of NFW halos, = ratio of virial and scale radii
     halo_concentration: float = 10.0
 
     # Gas fraction in the halo
@@ -51,13 +51,15 @@ class InitialGalaxyParameters:
     @property
     def smbh_mass(self):
         # Calculate SMBH mass from total galaxy mass (including dark matter)
-        log_smbh_mass = 8.18 + (1.57 * (np.log10(self.virial_mass * unt.unit_sunmass) - 13.0))
+        # Bandara et al. 2009, doi: 10.1088/0004-637X/704/2/1135
+        log_smbh_mass = 8.18 + (1.55 * (np.log10(self.virial_mass * unt.unit_sunmass) - 13.0))
         smbh_mass = 10 ** log_smbh_mass
         return smbh_mass / unt.unit_sunmass
 
     @property
     def bulge_mass(self):
         # Calculate bulge mass from SMBH mass
+        # McConnell & Ma 2013, doi: 10.1088/0004-637X/704/2/1135
         intercept_alpha = 8.46
         slope_beta = 1.05
         log_bulge_mass = (np.log10(self.smbh_mass * unt.unit_sunmass) - intercept_alpha) / slope_beta
