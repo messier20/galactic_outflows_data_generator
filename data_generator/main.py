@@ -317,7 +317,8 @@ if __name__ == '__main__':
     smbh_m = []
     bulge_mas = []
     
-    initial_galaxy_parameters = init.InitialGalaxyParameters()
+    rng = np.random.RandomState(0)
+    initial_galaxy_parameters = init.InitialGalaxyParameters(rng=rng)
 
     (db_file_header, df_index, virial_mass, smbh_m, bulge_mas, failed_outflows_mode_header) = run_outflow_simulation(
         initial_galaxy_parameters,

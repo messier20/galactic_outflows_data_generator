@@ -44,6 +44,9 @@ class InitialGalaxyParameters:
     # Parametras iš šviesio funkcijų
     duration_coef_exp_law: float = np.log(0.01) * drop_timescale
 
+    # Random number generator that contributes to smbh and bulge mass calculations
+    rng: np.random.RandomState = None
+
     @property
     def virial_radius(self):
         return (626 * (((self.virial_mass / (10 ** 13)) * unt.unit_sunmass) ** (1 / 3))) / unt.unit_kpc
@@ -51,16 +54,28 @@ class InitialGalaxyParameters:
     @property
     def smbh_mass(self):
         # Calculate SMBH mass from total galaxy mass (including dark matter)
-        # Bandara et al. 2009, doi: 10.1088/0004-637X/704/2/1135
-        log_smbh_mass = 8.18 + (1.55 * (np.log10(self.virial_mass * unt.unit_sunmass) - 13.0))
+        # Bandara et al. 2009, doi: 10.1088/0004-637X/704/2/1135 (equation 8)
+        free_coef = 8.18
+        if self.rng:
+            # We randomize the value of the first free coefficient to provide
+            # a realistic spread of smbh masses. Note that the bounds here
+            # are somewhat smaller than in the original equation and are
+            # sampled uniformly.
+            free_coef += self.rng.uniform(-0.4, 0.4)
+        log_smbh_mass = free_coef + (1.55 * (np.log10(self.virial_mass * unt.unit_sunmass) - 13.0))
         smbh_mass = 10 ** log_smbh_mass
         return smbh_mass / unt.unit_sunmass
 
     @property
     def bulge_mass(self):
         # Calculate bulge mass from SMBH mass
-        # McConnell & Ma 2013, doi: 10.1088/0004-637X/704/2/1135
+        # McConnell & Ma 2013, doi: 10.1088/0004-637X/764/2/184 (see abstract)
         intercept_alpha = 8.46
+        if self.rng:
+            # We randomize the value of the first free coefficient to provide
+            # a realistic spread of bulge masses. Note that the bounds here
+            # were derived by visually inspecting the results.
+            intercept_alpha += self.rng.uniform(0.6, -0.6)
         slope_beta = 1.05
         log_bulge_mass = (np.log10(self.smbh_mass * unt.unit_sunmass) - intercept_alpha) / slope_beta
         return (10 ** log_bulge_mass) * 1e11
