@@ -1,8 +1,8 @@
 import math
 
-from configurations.physics_constants import LIGHT_SPEED
-from configurations.constants import DRIVING_FORCE, GAMMA
-from configurations.units import unit_length, unit_mass
+from data_generator.configurations.physics_constants import LIGHT_SPEED
+from data_generator.configurations.constants import DRIVING_FORCE, GAMMA
+from data_generator.configurations.units import unit_length, unit_mass
 
 
 class DrivingForceIntegrator:

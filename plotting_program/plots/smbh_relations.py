@@ -1,8 +1,8 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-from configurations.path_version_settings import version
-from configurations.physical_values import intercept_alpha, slope_beta, bulge_normalization_mass
+from data_generator.configurations.path_version_settings import version
+from data_generator.configurations.physical_values import intercept_alpha, slope_beta, bulge_normalization_mass
 from plotting_program.plots.PlotSetup import PlotSetup
 
 

@@ -5,15 +5,15 @@ import time
 import matplotlib.pyplot as plt
 import pandas as pd
 
-import configurations.initial_galaxy_params as init
-import configurations.switches as swch
-import configurations.units as unt
-from configurations.path_version_settings import params_path, values_version_folder, version, \
+import data_generator.configurations.initial_galaxy_params as init
+import data_generator.configurations.switches as swch
+import data_generator.configurations.units as unt
+from data_generator.configurations.path_version_settings import params_path, values_version_folder, version, \
     predictions_file
-from data_models.arrays_modifier import *
-from mathematical_calculations.DrivingForceIntegrator import DrivingForceIntegrator
-from mathematical_calculations.FadeTypeSwitcher import FadeTypeSwitcher
-from mathematical_calculations.mass_calculation import mass_calculation
+from data_generator.data_models.arrays_modifier import *
+from data_generator.mathematical_calculations.DrivingForceIntegrator import DrivingForceIntegrator
+from data_generator.mathematical_calculations.FadeTypeSwitcher import FadeTypeSwitcher
+from data_generator.mathematical_calculations.mass_calculation import mass_calculation
 
 all_params_columns = ['radius', 'dot_radius', 'derived_dot_mass', 'mass_out', 'luminosity_AGN', 'smbh_mass', \
                               'duty_cycle', 't_initial_smbh_mass', 'bulge_mass', 'bulge_gas', 'galaxy_mass', \
@@ -317,8 +317,10 @@ if __name__ == '__main__':
     smbh_m = []
     bulge_mas = []
     
+    initial_galaxy_parameters = init.InitialGalaxyParameters()
+
     rng = np.random.RandomState(0)
-    initial_galaxy_parameters = init.InitialGalaxyParameters(rng=rng)
+    initial_galaxy_parameters.generate_stochastic_parameters(rng)
 
     (db_file_header, df_index, virial_mass, smbh_m, bulge_mas, failed_outflows_mode_header) = run_outflow_simulation(
         initial_galaxy_parameters,

@@ -1,4 +1,4 @@
-from configurations.units import unit_sunmass
+from data_generator.configurations.units import unit_sunmass
 from plotting_program.plots.PlotSetup import PlotSetup
 import matplotlib.pyplot as plt
 import numpy as np

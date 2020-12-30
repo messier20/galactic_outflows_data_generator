@@ -1,6 +1,6 @@
 import os
 # from model_program.input_parameters.initial_values import version
-from configurations.path_version_settings import values_version_folder, version
+from data_generator.configurations.path_version_settings import values_version_folder, version
 
 graphs_path = "./graphs/"
 plots_version_folder = 'v' + str(version) + '.10_11/'
