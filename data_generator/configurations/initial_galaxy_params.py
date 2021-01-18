@@ -1,6 +1,7 @@
 from dataclasses import dataclass
 
 import numpy as np
+import pandas as pd
 
 import data_generator.configurations.units as unt
 from data_generator.configurations.constants import RADIATIVE_EFFICIENCY_ETA, FADE
@@ -70,6 +71,21 @@ class InitialGalaxyParameters:
 
         raise AttributeError(
             "Unknown fade type %s, can't calculate quasar dt", self.fade
+        )
+
+    def to_dataframe(self):
+        return pd.DataFrame(
+            {
+                "smbh_mass": self.smbh_mass * unt.unit_sunmass,
+                "bulge_mass": self.bulge_mass,
+                "bulge_disc_gas_fraction": self.bulge_disc_gas_fraction,
+                "virial_mass": self.virial_mass * unt.unit_sunmass,
+                "quasar_activity_duration": self.quasar_activity_duration * unt.unit_year,
+                "fade_type": self.fade.value,
+                "duty_cycle": self.duty_cycle,
+                "outflow_sphere_angle_ratio": self.outflow_sphere_angle_ratio,
+            },
+            index=[0]
         )
 
     def generate_stochastic_parameters(self, rng):
