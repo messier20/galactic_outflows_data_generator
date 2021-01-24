@@ -1,5 +1,6 @@
 import itertools
 import math
+import os
 import time
 
 import matplotlib.pyplot as plt
@@ -15,53 +16,10 @@ from data_generator.mathematical_calculations.DrivingForceIntegrator import Driv
 from data_generator.mathematical_calculations.FadeTypeSwitcher import FadeTypeSwitcher
 from data_generator.mathematical_calculations.mass_calculation import mass_calculation
 
-all_params_columns = ['radius', 'dot_radius', 'derived_dot_mass', 'mass_out', 'luminosity_AGN', 'smbh_mass', \
-                              'duty_cycle', 't_initial_smbh_mass', 'bulge_mass', 'bulge_gas', 'galaxy_mass', \
-                              'quasar_duration', 'fade_type', 'outflow_sphare_angle']
-columns = 'radius_arr', 'dot_radius_arr', 'time_arr', 'dot_mass_arr', 'mass_out_arr', 'total_mass_arr', 'luminosity_AGN_arr'
 
-
-def run_outflow_simulation(
-    init_params,
-    outf_name,
-    db_file_header,
-    failed_outflows_mode_header,
-    df_index,
-    virial_mass=[],
-    smbh_m=[],
-    bulge_mas=[]):
-    '''
-        outf_name: name used for mapping outflows later (NN code?)
-        db_file_header: On first iteration forces 'w' mode on files, later turns on 'a'
-        failed_outflows_mode_header: When outflow calculations fail this gets set to True, afterwards outputs are written to a separate file
-        df_index: pandas table index, increments by 1 each iteration, makes tables behave >:(
-        out_indx: current galaxy (parameter set) index, used for file naming when outputting - first number in file name
-        variant_index: outer loop index (so either mass or fade type) - second number in file name
-    '''
-    out_indx = 0
-    variant_index = 0
-    
-    if swch.testing_phase:
-        subtracted_indices_count = 42
-        dtmax = const.DT_MAX_VERY_SMALL_OUTFLOWS
-    else:
-        # TODO change to switch
-        # TODO maybe I can write a function for subtracted_indices_count depending on duty cycle
-        # If Quasars are active longers - increas upper bound of time step, because we won't be missing much
-        if init_params.duty_cycle < 0.07:
-            subtracted_indices_count = 42
-            dtmax = const.DT_MAX_VERY_SMALL_OUTFLOWS
-        elif init_params.duty_cycle < 0.15:
-            subtracted_indices_count = 32
-            dtmax = const.DT_MAX_SMALL_OUTFLOWS
-        elif init_params.duty_cycle < 0.26:
-            subtracted_indices_count = 22
-            dtmax = const.DT_MAX_INTERMEDIATE_OUTFLOWS
-        else:
-            subtracted_indices_count = 12
-            dtmax = const.DT_MAX_BIG_OUTFLOWS
-
-    # for bulge_index, bulge_disc_totalmass_fraction in enumerate(bulge_disc_totalmass_fractions):
+def run_outflow_simulation(init_params, dtmax=const.DT_MAX_VERY_SMALL_OUTFLOWS):
+    fade_type_switcher = FadeTypeSwitcher()
+    integrator = DrivingForceIntegrator()
 
     radius_arr, dot_radius_arr, dotdot_radius_arr, dotdotdot_radius_arr, mass_out_arr, total_mass_arr, dot_mass_arr, time_arr, \
     dot_time_arr, luminosity_AGN_arr, smbh_mass_arr, bulge_mass_arr = init_zero_arrays(arrays_count=12)
@@ -138,7 +96,7 @@ def run_outflow_simulation(
             time_eff = time_arr[index]
 
         # How much luminosity gets reduced, mainly decided by time
-        luminosity_coef = FadeTypeSwitcher.calc_luminosity_coef(
+        luminosity_coef = fade_type_switcher.calc_luminosity_coef(
             init_params.fade, time_eff,
             init_params.quasar_activity_duration,
             init_params.eddington_ratio
@@ -158,7 +116,7 @@ def run_outflow_simulation(
         # TODO change implementation without passing arrays or without passing separate array elements
         # Calculates next radius and its derivatives from various current parameters
         (radius_arr, dot_radius_arr, dotdot_radius_arr, dotdotdot_radius_arr) = \
-            Integrator.driving_force_calc(swch.driving_force, mass_gas, radius_arr[index], const.ETA_DRIVE,
+            integrator.driving_force_calc(swch.driving_force, mass_gas, radius_arr[index], const.ETA_DRIVE,
                                           swch.integration_method, luminosity, dot_mass_gas,
                                           dot_radius_arr[index], dotdot_radius_arr[index], mass_potential,
                                           dot_mass_potential,
@@ -198,157 +156,53 @@ def run_outflow_simulation(
     smbh_mass_arr = smbh_mass_arr * unt.unit_sunmass
     luminosity_AGN_arr = luminosity_AGN_arr * unt.unit_energy / unt.unit_time
 
-    # w_bulge_mass_arr = bulge_mass_arr * unt.unit_sunmass
-    w_initial_smbh_mass = init_params.smbh_mass * unt.unit_sunmass
-    w_virial_galaxy_mass = init_params.virial_mass * unt.unit_sunmass
-    w_quasar_duration = init_params.quasar_activity_duration * unt.unit_year
+    outflow_properties = pd.DataFrame(
+        {
+            "radius_arr": radius_arr,
+            "dot_radius_arr": dot_radius_arr,
+            "time_arr": time_arr,
+            "dot_mass_arr": derived_dot_mass,
+            "mass_out_arr": mass_out_arr,
+            "total_mass_arr": total_mass_arr,
+            "luminosity_AGN_arr": luminosity_AGN_arr,
+            "failed_calc": failed_calc,
+        }
+    )
 
-    # observed_time_arr = radius_arr / dot_radius_arr
-
-    # reducion_indices = np.where(time_arr > 1e4)
-    reducion_indices = np.where(radius_arr > 0.02)
-    # observed_time_reduced_arr = np.where(radius_arr > 0.02, observed_time_arr, np.nan)
-
-    outflow_properties_df = pd.DataFrame(
-        np.array([radius_arr[reducion_indices], dot_radius_arr[reducion_indices], time_arr[reducion_indices],
-                  derived_dot_mass[reducion_indices], mass_out_arr[reducion_indices],
-                  total_mass_arr[reducion_indices], luminosity_AGN_arr[reducion_indices]]).transpose())
-    outflow_properties_df.columns = columns
-
-    if failed_calc:
-        outflow_properties_df.to_csv(
-            (str(params_path) + values_version_folder + '_failed' + str(
-                out_indx) + '_' + str(variant_index) + '.csv'),
-            header=True, index=False)
-    else:
-        out_temp_name = str(params_path) + values_version_folder + '_' + str(
-            out_indx) + '_' + str(variant_index)
-        outflow_properties_df.to_csv(
-            (out_temp_name + '.csv'),
-            header=True, index=False)
-        smbh_m.append(w_initial_smbh_mass)
-        # bulge_mas.append(bulge_masses[0])
-        bulge_mas.append(init_params.bulge_mass)
-        virial_mass.append((w_virial_galaxy_mass))
-
-    del outflow_properties_df
-
-    galaxy_properties_df = pd.DataFrame({'smbh_mass': w_initial_smbh_mass, 'bulge_mass': init_params.bulge_mass,
-                                         'bulge_gas_frac': init_params.bulge_disc_gas_fraction, 'galaxy_mass': w_virial_galaxy_mass,
-                                         'quasar_duration': w_quasar_duration, 'fade_type': init_params.fade.value,
-                                         'duty_cycle': init_params.duty_cycle,
-                                         'params_index': out_indx, 'variant_loop_index': variant_index,
-                                         'outflow_sphare_angle': init_params.outflow_sphere_angle_ratio, 'name': outf_name}, index=[df_index])
-
-    mode = 'w' if db_file_header else 'a'
-    failed_outflows_mode = 'w' if failed_outflows_mode_header else 'a'
-
-    if failed_calc:
-        galaxy_properties_df.to_csv((str(params_path) + values_version_folder + 'failed_outflows.csv'),
-                                    mode=failed_outflows_mode, header=failed_outflows_mode_header, index=False)
-        failed_outflows_mode_header = False
-
-    else:
-        galaxy_properties_df.to_csv((str(params_path) + values_version_folder + 'properties_map.csv'), mode=mode,
-                                    header=db_file_header, index=False)
-    # db_file_header = False
-    # df_index +=1
-    del galaxy_properties_df
-
-    if not failed_calc:
-        rng = np.random.RandomState(variant_index + out_indx)
-        subtracted_indices = reducion_indices[0]
-        rng.shuffle(subtracted_indices)
-        # subtracted_indices = subtracted_indices[::10]
-        subtracted_indices = subtracted_indices[::subtracted_indices_count]
-        # subtracted_indices = subtracted_indices[::13]
-        # subtracted_indices = subtracted_indices[::8]
-
-        # TODO move to function?
-        temp_initial_smbh_mass = [w_initial_smbh_mass for i in range(len(subtracted_indices))]
-        temp_bulge_masses = [init_params.bulge_mass for i in range(len(subtracted_indices))]
-        temp_bulge_disc_gas_fraction = [init_params.bulge_disc_gas_fraction for i in range(len(subtracted_indices))]
-        temp_virial_galaxy_mass = [w_virial_galaxy_mass for i in range(len(subtracted_indices))]
-        temp_quasar_duration = [w_quasar_duration for i in range(len(subtracted_indices))]
-        temp_duty_cycle = [init_params.duty_cycle for i in range(len(subtracted_indices))]
-        temp_outf_angle = [init_params.outflow_sphere_angle_ratio for i in range(len(subtracted_indices))]
-
-        temp_fade = [init_params.fade.value for i in range(len(subtracted_indices))]
-
-        all_parameters = np.column_stack([radius_arr[subtracted_indices], dot_radius_arr[subtracted_indices],
-                                          derived_dot_mass[subtracted_indices], mass_out_arr[subtracted_indices],
-                                          luminosity_AGN_arr[subtracted_indices],
-                                          smbh_mass_arr[subtracted_indices], temp_duty_cycle,
-                                          temp_initial_smbh_mass, temp_bulge_masses,
-                                          temp_bulge_disc_gas_fraction, temp_virial_galaxy_mass,
-                                          temp_quasar_duration, temp_fade, temp_outf_angle])
-
-        df_all_parameters = pd.DataFrame(all_parameters, columns=all_params_columns)
-
-        mode = 'w' if db_file_header else 'a'
-        df_all_parameters.to_csv((str(params_path) + values_version_folder + 'train_data' + str(version) + '.csv'),
-                                 mode=mode, header=db_file_header, index=False, encoding="utf-8")
-        db_file_header = False
-        df_index += 1
-
-        del temp_initial_smbh_mass
-        del temp_bulge_masses
-        del temp_bulge_disc_gas_fraction
-        del temp_virial_galaxy_mass
-        del temp_quasar_duration
-        del temp_fade
-        del all_parameters
-        del temp_outf_angle
-
-    return db_file_header, df_index, virial_mass, smbh_m, bulge_mas, failed_outflows_mode_header
+    return outflow_properties[outflow_properties["radius_arr"] > 0.02].reset_index(drop=True)
 
 
 if __name__ == '__main__':
 
     np.seterr(divide='ignore', invalid='ignore')
     start_time = time.time()
-
-    FadeTypeSwitcher = FadeTypeSwitcher()
-    Integrator = DrivingForceIntegrator()
-    db_file_header = True
-    failed_outflows_mode_header = True
-    df_index = 0
-    virial_mass = []
-    smbh_m = []
-    bulge_mas = []
     
     initial_galaxy_parameters = init.InitialGalaxyParameters()
 
     rng = np.random.RandomState(0)
     initial_galaxy_parameters.generate_stochastic_parameters(rng)
 
-    (db_file_header, df_index, virial_mass, smbh_m, bulge_mas, failed_outflows_mode_header) = run_outflow_simulation(
-        initial_galaxy_parameters,
-        False,
-        db_file_header,
-        failed_outflows_mode_header,
-        df_index,
-        virial_mass,
-        smbh_m,
-        bulge_mas)
+    initial_galaxy_parameters.to_dataframe().to_csv(
+        os.path.join(params_path, values_version_folder, "initial_galaxy_parameters.csv"),
+        index=False,
+        encoding="utf-8"
+    )
+
+    # If Quasars are active longers - increase upper bound of time step, because we won't be missing much
+    if initial_galaxy_parameters.duty_cycle < 0.07:
+        dtmax = const.DT_MAX_VERY_SMALL_OUTFLOWS
+    elif initial_galaxy_parameters.duty_cycle < 0.15:
+        dtmax = const.DT_MAX_SMALL_OUTFLOWS
+    elif initial_galaxy_parameters.duty_cycle < 0.26:
+        dtmax = const.DT_MAX_INTERMEDIATE_OUTFLOWS
+    else:
+        dtmax = const.DT_MAX_BIG_OUTFLOWS
+    outflow_properties = run_outflow_simulation(initial_galaxy_parameters, dtmax=dtmax)
+
+    outflow_properties.to_csv(
+        os.path.join(params_path, values_version_folder, "outflow_properties.csv"),
+        index=False,
+        encoding="utf-8"
+    )
 
     print('passed time', time.time() - start_time)
-
-    plt.xlabel('mbulge')
-    plt.ylabel('smbh_m')
-    plt.xscale('log')
-    plt.yscale('log')
-    plt.xlim(1e8, 1e14)
-    plt.ylim(3e5, 5e11)
-    plt.scatter(bulge_mas, smbh_m)
-    plt.savefig(params_path + 'graphs/bulge-smbh' + str(version) + '.png')
-    plt.close()
-
-    plt.xlabel('mtot')
-    plt.ylabel('smbh_m')
-    plt.xscale('log')
-    plt.yscale('log')
-    plt.xlim(3e11, 1e15)
-    plt.ylim(3e6, 5e11)
-    plt.scatter(virial_mass, smbh_m, s=1)
-    plt.savefig(params_path + 'graphs/smbh-mtot' + str(version) + '.png')

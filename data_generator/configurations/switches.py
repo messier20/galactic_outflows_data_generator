@@ -2,7 +2,6 @@ import data_generator.configurations.constants as const
 
 repeating_equation = True
 smbh_grows = True
-testing_phase = False
 
 halo_profile = const.PROFILE_TYPES.NFW
 bulge_profile = const.PROFILE_TYPES.ISOTHERMAL
