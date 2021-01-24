@@ -188,17 +188,15 @@ if __name__ == '__main__':
         encoding="utf-8"
     )
 
-    dtmax = const.DT_MAX_VERY_SMALL_OUTFLOWS
-    if not swch.testing_phase:
-        # If Quasars are active longers - increase upper bound of time step, because we won't be missing much
-        if initial_galaxy_parameters.duty_cycle < 0.07:
-            dtmax = const.DT_MAX_VERY_SMALL_OUTFLOWS
-        elif initial_galaxy_parameters.duty_cycle < 0.15:
-            dtmax = const.DT_MAX_SMALL_OUTFLOWS
-        elif initial_galaxy_parameters.duty_cycle < 0.26:
-            dtmax = const.DT_MAX_INTERMEDIATE_OUTFLOWS
-        else:
-            dtmax = const.DT_MAX_BIG_OUTFLOWS
+    # If Quasars are active longers - increase upper bound of time step, because we won't be missing much
+    if initial_galaxy_parameters.duty_cycle < 0.07:
+        dtmax = const.DT_MAX_VERY_SMALL_OUTFLOWS
+    elif initial_galaxy_parameters.duty_cycle < 0.15:
+        dtmax = const.DT_MAX_SMALL_OUTFLOWS
+    elif initial_galaxy_parameters.duty_cycle < 0.26:
+        dtmax = const.DT_MAX_INTERMEDIATE_OUTFLOWS
+    else:
+        dtmax = const.DT_MAX_BIG_OUTFLOWS
     outflow_properties = run_outflow_simulation(initial_galaxy_parameters, dtmax=dtmax)
 
     outflow_properties.to_csv(
