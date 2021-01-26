@@ -37,8 +37,7 @@ class DrivingForceIntegrator:
                           dot_radius,
                           dotdot_radius, eta_drive)
         elif driving_force == DRIVING_FORCE.MOMENTUM_DRIVING:
-            # TODO implement momentum driving case
-            print(driving_force)
+            raise AttributeError("Momentum driving force not implemented")
 
     def simple_integration(self, dot_rt, dot_rt_arr, radius_arr, dot_radius_arr, dotdot_radius_arr, index, dt,
                            radius, dot_radius,

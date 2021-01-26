@@ -1,23 +1,26 @@
-import itertools
 import math
-import os
-import time
 
-import matplotlib.pyplot as plt
+import numpy as np
 import pandas as pd
 
+import data_generator.configurations.constants as const
 import data_generator.configurations.initial_galaxy_params as init
-import data_generator.configurations.switches as swch
 import data_generator.configurations.units as unt
-from data_generator.configurations.path_version_settings import params_path, values_version_folder, version, \
-    predictions_file
-from data_generator.data_models.arrays_modifier import *
 from data_generator.mathematical_calculations.DrivingForceIntegrator import DrivingForceIntegrator
 from data_generator.mathematical_calculations.FadeTypeSwitcher import FadeTypeSwitcher
 from data_generator.mathematical_calculations.mass_calculation import mass_calculation
 
 
-def run_outflow_simulation(init_params, dtmax=const.DT_MAX_VERY_SMALL_OUTFLOWS):
+def init_zero_arrays(arrays_count):
+    return (np.zeros(const.TIMESTEPS_NUMB,) for i in range(arrays_count))
+
+
+def run_outflow_simulation(
+    init_params,
+    dtmax=const.DT_MAX_VERY_SMALL_OUTFLOWS,
+    repeating_equation=True,
+    smbh_grows=True,
+):
     fade_type_switcher = FadeTypeSwitcher()
     integrator = DrivingForceIntegrator()
 
@@ -27,11 +30,9 @@ def run_outflow_simulation(init_params, dtmax=const.DT_MAX_VERY_SMALL_OUTFLOWS):
     dot_radius_arr[0] = init.dot_radius
     dotdot_radius_arr[0] = init.dotdot_radius
     smbh_mass_arr[0] = init_params.smbh_mass
+    failed_calc = False
 
-    is_main_loop = True
-    index = 0
-    while is_main_loop:
-        failed_calc = False
+    for index in range(len(radius_arr) - 1):
         # mass_potential is ALL mass (dark matter, stars, SMBH) without gas (WITHIN CURRENT RADIUS)
         # mass_gas is ONLY gas mass (WITHIN CURRENT RADIUS)
         # rho_gas is gas density
@@ -90,7 +91,7 @@ def run_outflow_simulation(init_params, dtmax=const.DT_MAX_VERY_SMALL_OUTFLOWS):
         dot_time_arr[index + 1] = dt
         time_arr[index + 1] = time_arr[index] + dt
 
-        if swch.repeating_equation:
+        if repeating_equation:
             time_eff = time_arr[index] % init_params.quasar_dt
         else:
             time_eff = time_arr[index]
@@ -111,36 +112,38 @@ def run_outflow_simulation(init_params, dtmax=const.DT_MAX_VERY_SMALL_OUTFLOWS):
         luminosity_AGN_arr[index + 1] = luminosity  # ;actual luminosity
 
         # SMBH increases in mass
-        if swch.smbh_grows:
+        if smbh_grows:
             smbh_mass_arr[index + 1] = smbh_mass_arr[index] * math.exp(luminosity_coef * dt / init_params.salpeter_timescale)
         # TODO change implementation without passing arrays or without passing separate array elements
         # Calculates next radius and its derivatives from various current parameters
-        (radius_arr, dot_radius_arr, dotdot_radius_arr, dotdotdot_radius_arr) = \
-            integrator.driving_force_calc(swch.driving_force, mass_gas, radius_arr[index], const.ETA_DRIVE,
-                                          swch.integration_method, luminosity, dot_mass_gas,
-                                          dot_radius_arr[index], dotdot_radius_arr[index], mass_potential,
-                                          dot_mass_potential,
-                                          dotdot_mass_gas,
-                                          dotdotdot_radius_arr, radius_arr,
-                                          dot_radius_arr, dotdot_radius_arr, index, dt)
+        radius_arr, dot_radius_arr, dotdot_radius_arr, dotdotdot_radius_arr = integrator.driving_force_calc(
+            const.DRIVING_FORCE.ENERGY_DRIVING,
+            mass_gas,
+            radius_arr[index],
+            const.ETA_DRIVE,
+            const.INTEGRATION_METHOD.SIMPLE_INTEGRATION,
+            luminosity,
+            dot_mass_gas,
+            dot_radius_arr[index],
+            dotdot_radius_arr[index],
+            mass_potential,
+            dot_mass_potential,
+            dotdot_mass_gas,
+            dotdotdot_radius_arr,
+            radius_arr,
+            dot_radius_arr,
+            dotdot_radius_arr,
+            index,
+            dt
+        )
 
         if radius_arr[index + 1] < 0.00000000000000:
             print('ups, calc failed')
             failed_calc = True
-            is_main_loop = False
+            break
 
-        index += 1
-        if index >= len(radius_arr) - 1:
-            # print(' timesteps')
-            is_main_loop = False
-
-        if time_arr[index] >= const.TIME_MAX:
-            # print('time')
-            is_main_loop = False
-
-        if radius_arr[index] >= const.RADIUS_MAX:
-            # print('radiusmax')
-            is_main_loop = False
+        if index >= len(radius_arr) - 1 or time_arr[index + 1] >= const.TIME_MAX or radius_arr[index + 1] >= const.RADIUS_MAX:
+            break
 
     radius_arr = radius_arr * unt.unit_kpc
     dot_radius_arr = dot_radius_arr * unt.unit_velocity / 1.e5
@@ -149,8 +152,8 @@ def run_outflow_simulation(init_params, dtmax=const.DT_MAX_VERY_SMALL_OUTFLOWS):
     # pressure_contact_arr = pressure_contact_arr / unit_length / (unit_time ** 2)
     # pressure_outer_arr = pressure_outer_arr / unit_length / (unit_time ** 2)
     mv = (mass_out_arr * unt.unit_sunmass) * init_params.outflow_sphere_angle_ratio * dot_radius_arr * 1.02269032e-9
-    derived_dot_mass = np.divide(mv, radius_arr)
-    # dot_mass_arr = dot_mass_arr * unt.unit_sunmass / unt.unit_year
+    derived_dot_mass = np.divide(mv, radius_arr, out=np.zeros_like(mv), where=(radius_arr != 0.0))
+
     mass_out_arr = mass_out_arr * init_params.outflow_sphere_angle_ratio * unt.unit_sunmass
     total_mass_arr = total_mass_arr * unt.unit_sunmass
     smbh_mass_arr = smbh_mass_arr * unt.unit_sunmass
@@ -170,39 +173,3 @@ def run_outflow_simulation(init_params, dtmax=const.DT_MAX_VERY_SMALL_OUTFLOWS):
     )
 
     return outflow_properties[outflow_properties["radius_arr"] > 0.02].reset_index(drop=True)
-
-
-if __name__ == '__main__':
-
-    np.seterr(divide='ignore', invalid='ignore')
-    start_time = time.time()
-    
-    initial_galaxy_parameters = init.InitialGalaxyParameters()
-
-    rng = np.random.RandomState(0)
-    initial_galaxy_parameters.generate_stochastic_parameters(rng)
-
-    initial_galaxy_parameters.to_dataframe().to_csv(
-        os.path.join(params_path, values_version_folder, "initial_galaxy_parameters.csv"),
-        index=False,
-        encoding="utf-8"
-    )
-
-    # If Quasars are active longers - increase upper bound of time step, because we won't be missing much
-    if initial_galaxy_parameters.duty_cycle < 0.07:
-        dtmax = const.DT_MAX_VERY_SMALL_OUTFLOWS
-    elif initial_galaxy_parameters.duty_cycle < 0.15:
-        dtmax = const.DT_MAX_SMALL_OUTFLOWS
-    elif initial_galaxy_parameters.duty_cycle < 0.26:
-        dtmax = const.DT_MAX_INTERMEDIATE_OUTFLOWS
-    else:
-        dtmax = const.DT_MAX_BIG_OUTFLOWS
-    outflow_properties = run_outflow_simulation(initial_galaxy_parameters, dtmax=dtmax)
-
-    outflow_properties.to_csv(
-        os.path.join(params_path, values_version_folder, "outflow_properties.csv"),
-        index=False,
-        encoding="utf-8"
-    )
-
-    print('passed time', time.time() - start_time)

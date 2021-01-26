@@ -2,7 +2,7 @@ import numpy as np
 import pandas as pd
 
 import data_generator.configurations.initial_galaxy_params as init
-from data_generator.main import run_outflow_simulation
+from data_generator.simulation import run_outflow_simulation
 
 
 def test_simulation_default_params():

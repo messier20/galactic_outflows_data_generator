@@ -15,7 +15,7 @@ poetry install
 3. Run generation with:
 
 ```bash
-poetry run python data_generator/main.py
+poetry run python data_generator/run.py
 ```
 
 This should output raw data in `./galactic_outflows_data_generator/data_generator/results/v13.0` and several illustrations in `./galactic_outflows_data_generator/data_generator/results/graphs`.
